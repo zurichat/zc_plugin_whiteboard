@@ -25,7 +25,7 @@ jobs:
           script: |
             cd /var/www/zc_plugin_whiteboard
             git pull
+            cd /var/www/zc_plugin_whiteboard/Frontend
             npm update
             npm run build
-            cd /var/www/zc_plugin_whiteboard/Frontend
             pm2 reload seneca
