@@ -5,7 +5,7 @@ const Home = () => {
     return (
         <div className={styles.title}>
             <div>
-            <h1>The Team Seneca</h1>
+            <h1>Team Seneca</h1>
             <p>Whiteboard plugin</p>
 
             </div>
