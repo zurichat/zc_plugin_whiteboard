@@ -4,7 +4,9 @@
   "description": "whiteboard plugin",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/zurichat/zc_plugin_whiteboard/issues"
   },
-  "homepage": "https://github.com/zurichat/zc_plugin_whiteboard#readme"
+  "homepage": "https://github.com/zurichat/zc_plugin_whiteboard#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12"
+  }
 }
