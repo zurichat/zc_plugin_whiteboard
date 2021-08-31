@@ -31,4 +31,4 @@ jobs:
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
             npm update
             pm2 ls
-            pm2 start app.js --name "whiteboard"
+            pm2 reload whiteboard
