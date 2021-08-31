@@ -23,9 +23,11 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/zc_plugin_whiteboard
+            cd /var/www/zc_plugin_whiteboard/
             git pull
-            cd /var/www/zc_plugin_whiteboard/Frontend
+            cd /var/www/zc_plugin_whiteboard/whiteboard-client/
             npm update
             npm run build
-            pm2 reload seneca
+            cd /var/www/zc_plugin_whiteboard/whiteboard-server/
+            npm update
+            pm2 reload whiteboard
