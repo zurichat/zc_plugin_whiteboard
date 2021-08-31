@@ -30,5 +30,8 @@ jobs:
             npm run build
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
             npm update
+            cd ~
+            pwd
+            echo $USER
             pm2 ls
             pm2 reload whiteboard
