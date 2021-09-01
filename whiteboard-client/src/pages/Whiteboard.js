@@ -1,6 +1,6 @@
 import React from "react";
 import "../App.css";
-import WhiteboardCanvas from "../components/WhiteboardCanvas";
+import WhiteboardCanvas from "../components/Whiteboard-Canvas/WhiteboardCanvas";
 
 function Whiteboard() {
   return (
