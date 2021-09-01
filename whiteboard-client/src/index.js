@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     {/* <Whiteboard /> */}
     <ColorPicker />
-  </React.StrictMode>
+  </React.StrictMode>,
   document.getElementById("root")
 );
 
