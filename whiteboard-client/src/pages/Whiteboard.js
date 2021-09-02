@@ -7,6 +7,7 @@ function Whiteboard() {
     <div className="App">
       <WhiteboardCanvas />
       <header className="App-header">Zuri whiteboard plugin</header>
+      <ShapeSelector />
     </div>
   );
 }
