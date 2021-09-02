@@ -1,17 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState } from 'react';
 
 
-const colors = [
-  "Select Color",
-  "black",
-  "red",
-  "green",
-  "yellow",
-  "blue",
-  "purple",
-  "orange"
-]
-
 function WhiteboardCanvas() {
 
   const canvasRef = useRef(null);
@@ -48,19 +37,6 @@ function WhiteboardCanvas() {
     }
   }, [lastPosition, mouseDown, selectedColor, setPosition])
 
-  const download = async () => {
-    const image = canvasRef.current.toDataURL('image/png');
-    const blob = await (await fetch(image)).blob();
-    const blobURL = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = blobURL;
-    link.download = "image.png";
-    link.click();
-  }
-
-  const clear = () => {
-    ctx.current.clearRect(0, 0, ctx.current.canvas.width, ctx.current.canvas.height)
-  }
 
   const onMouseDown = (e) => {
     setPosition({
@@ -83,10 +59,10 @@ function WhiteboardCanvas() {
     <div>
        <canvas 
           style= {{
-              border:"1px solid #000"
+              border:"1px solid orange"
           }}
-          width={400}
-          height={400}
+          width={600}
+          height={600}
           ref= {canvasRef}
           onMouseMove = {onMouseMove}
           onMouseUp = {onMouseUp}
@@ -94,20 +70,6 @@ function WhiteboardCanvas() {
           onMouseLeave = {onMouseUp}
         
         />
-        <br />
-
-        <select 
-          value={selectedColor} 
-          onChange={(e) => setSelectedColor(e.target.value)}
-        >
-            {
-                colors.map(
-                    color => <option key={color} value={color}>{color}</option>
-                )
-            }       
-        </select>
-        <button onClick = { clear }>Clear</button>
-        <button onClick = { download }>Download</button>
     </div>
   );
 }
