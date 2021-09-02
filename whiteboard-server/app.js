@@ -1,5 +1,6 @@
 const express = require("express");
 const http = require("http");
+const routes = require('./Routes/router');
 require("dotenv").config();
 
 //initialize express
@@ -9,6 +10,8 @@ const app = express();
 app.use("/public", express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
+app.use('/api', routes);
 
 app.get("/", (req, res) => {
   res.status(200).send("zuri whiteboard plugin");
