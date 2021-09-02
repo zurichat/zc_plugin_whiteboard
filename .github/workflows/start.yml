@@ -1,12 +1,6 @@
-name: Zuri Whiteboard Deployment
+name: Zuri Whiteboard Start PM2
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -23,11 +17,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/zc_plugin_whiteboard/
-            git pull
-            cd /var/www/zc_plugin_whiteboard/whiteboard-client/
-            npm update
-            npm run build
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
-            npm update
-            pm2 reload whiteboard 2>/dev/null || pm2 start app.js --name "whiteboard"
+            pm2 start app.js --name "whiteboard"
