@@ -12,3 +12,58 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+
+/* subtool bar */
+.test-btn {
+	padding: 0.5rem;
+	width: 100px;
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #fff;
+}
+
+.icon-link {
+  padding: 0.2rem;
+  margin: 5px;
+}
+
+.icon-separator {
+  position: relative;
+  border-right: 1px solid #999;
+  top: -5px;
+}
+
+.icon-adjust {
+  position: relative;
+  top: 2px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-main {
+  position:fixed;
+  background: white;
+  width: auto;
+  height: auto;
+  top:50%;
+  left:50%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  transform: translate(-50%,-50%);
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
