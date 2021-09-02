@@ -2,7 +2,7 @@ import React from "react";
 
 function ToolBar() {
   return (
-    <div className="App">
+    <div className="toolbar-wrapper">
       <div className="icon">
         <svg
           width="28"
