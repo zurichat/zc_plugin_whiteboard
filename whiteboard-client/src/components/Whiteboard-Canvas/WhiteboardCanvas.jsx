@@ -6,7 +6,6 @@ function WhiteboardCanvas() {
   const canvasRef = useRef(null);
   const ctx = useRef(null);
 
-  const [selectedColor, setSelectedColor] = useState(colors[0])
   const [mouseDown, setMouseDown] = useState(false);
   const [lastPosition, setPosition] = useState({
     x: 0,
@@ -22,7 +21,6 @@ function WhiteboardCanvas() {
   const draw = useCallback((x, y) => {
     if (mouseDown) {
       ctx.current.beginPath();
-      ctx.current.strokeStyle = selectedColor;
       ctx.current.lineWidth = 10;
       ctx.current.lineJoin = 'round';
       ctx.current.moveTo(lastPosition.x, lastPosition.y);
@@ -35,7 +33,7 @@ function WhiteboardCanvas() {
         y
       })
     }
-  }, [lastPosition, mouseDown, selectedColor, setPosition])
+  }, [lastPosition, mouseDown, setPosition])
 
 
   const onMouseDown = (e) => {
