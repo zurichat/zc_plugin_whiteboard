@@ -1,0 +1,15 @@
+.shapesContainer {
+  width: 134px;
+  height: 143px;
+  margin: 0% auto;
+  border: #999999 solid 1px;
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.shapes {
+  cursor: pointer;
+}
