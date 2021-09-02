@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import ColorPicker from "./components/colorpicker/ColorPicker";
+import Whiteboard from "./pages/Whiteboard";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ColorPicker />
+    <Whiteboard />
   </React.StrictMode>,
   document.getElementById("root")
 );
