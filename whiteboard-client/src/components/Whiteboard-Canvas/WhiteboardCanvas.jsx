@@ -57,7 +57,7 @@ function WhiteboardCanvas() {
     <div>
        <canvas 
           style= {{
-              border:"1px solid orange"
+              background:"orange"
           }}
           width={600}
           height={600}
