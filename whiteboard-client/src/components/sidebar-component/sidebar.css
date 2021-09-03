@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    height: 900px;
+    width: 269px;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+}
+
+.wrapper{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    width: 100%;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.logo{
+    padding: 0 10%;
+}
+
+.Hng{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #00B87C;
+}
+
+.Hng span{
+    display: flex;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+    padding: 0 20%;
+}
+
+.Hng h3{
+    font-family: Lato;
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 100%;
+/* identical to box height, or 18px */
+color: #FFFFFF;
+}
+
+/* .container span{
+    width: 40%;
+} */
+
+.container p{
+    width: 50%;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 28px;
+    /* identical to box height, or 187% */
+    color: #999999;
+}
+
+svg{
+    width: 20px;
+}
