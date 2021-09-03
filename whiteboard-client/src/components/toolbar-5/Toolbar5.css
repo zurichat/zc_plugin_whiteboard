@@ -1,0 +1,8 @@
+.toolContainer {
+  height: 45px;
+  width: 306px;
+  left: 822px;
+  top: 364px;
+  display: flex;
+  justify-content: space-between;
+}
