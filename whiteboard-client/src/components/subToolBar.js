@@ -8,7 +8,7 @@ import {
   faFont,
 } from "@fortawesome/free-solid-svg-icons";
 
-const SubToolBarWrapper = styled.section`
+const SubToolBarWrapper = styled.div`
   max-width: 300px;
   border-radius: 10px;
   display: flex;
