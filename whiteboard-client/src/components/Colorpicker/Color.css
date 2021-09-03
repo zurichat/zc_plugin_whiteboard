@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .colorpicker-container {
+    border: 1px solid;
+    display: flex;
+    position: relative;
+    width: 242px;
+    height: 40px;
+  margin: 20px auto;
+    background: #f2f2f2;
+    border: 1px solid #e1e1e1;
+    border-radius: 9px 9px 0px 0px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .color {
+  /* border: 1px solid; */
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  }
+  
+  .outerdiv1 {
+    width: 22px;
+  height: 22px;
+  background: #FFFFFF;
+  border: 1px solid #1D0101;
+  box-sizing: border-box;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  }
+  
+  .inner-color-1 {
+    width: 18px;
+    height: 18px;
+    background: #000000;
+    border-radius: 18px;
+    border: 1px solid #fff;
+    margin: 0 auto;
+  }
+  
+  .color2 {
+    background: #666666;
+  }
+  .color3 {
+    background: #0019FA;
+  }
+  .color4 {
+    background: #05F000;
+  }
+  .color5 {
+    background: #FAE20B;
+  }
+  .color6 {
+    background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, rgba(255, 122, 0, 0.94) 12.5%, rgba(173, 255, 0, 0.94) 26.56%, rgba(36, 255, 0, 0.94) 41.15%, rgba(46, 181, 133, 0.94) 55.73%, rgba(110, 113, 117, 0.94) 68.75%, rgba(128, 0, 255, 0.94) 82.81%, rgba(219, 0, 255, 0.94) 100%);
+  }
+  .color7 {
+    background: #00B87C;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  .inner-color-7 {
+    width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: #FFFFFF;
+  }
+  
+  .color8 {
+    width: 10px;
+  height: 10px;
+  background: #3E3636;
+  border-radius: 10px;
+  }
+  
+  .color-line {
+  width: 20px;
+  height: 0px;
+  border: 2px solid #585858;
+  background: #585858;
+  transform: rotate(-90deg);
+  border-radius: 10px;
+  }
