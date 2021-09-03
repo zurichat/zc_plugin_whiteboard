@@ -5,7 +5,7 @@ import Participants from "../components/Participants";
 import ToolBar from "../components/ToolBar";
 import SideBar from "../components/sidebar-component/Sidebar.js";
 import ShapeSelector from "../components/ShapesSelector/ShapeSelector";
-
+import SavedFileView from "../components/SavedFileView/SavedFileView";
 function Whiteboard() {
   return (
     <div className="App">
@@ -15,6 +15,7 @@ function Whiteboard() {
       <Participants />
       <ToolBar />
       <ShapeSelector />
+      <SavedFileView />
     </div>
   );
 }
