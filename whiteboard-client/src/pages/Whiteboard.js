@@ -6,6 +6,8 @@ import ToolBar from "../components/ToolBar";
 import SideBar from "../components/sidebar-component/sidebar.js";
 import ShapeSelector from "../components/ShapesSelector/ShapeSelector";
 import SubToolBar from "../components/subToolBar";
+import SavedFileView from "../components/SavedFileView/SavedFileView";
+import ColorPicker from "../components/Colorpicker/Colorpicker";
 
 function Whiteboard() {
   return (
@@ -15,8 +17,10 @@ function Whiteboard() {
       {/* <header className="App-header">Zuri whiteboard plugin</header> */}
       <Participants />
       <ToolBar />
+      <ColorPicker />
       <ShapeSelector />
       <SubToolBar />
+      <SavedFileView />
     </div>
   );
 }
