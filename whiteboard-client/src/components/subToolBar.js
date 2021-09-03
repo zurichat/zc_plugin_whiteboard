@@ -1,12 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faThumbtack,
-  faLink,
-  faShapes,
-  faFont,
-} from "@fortawesome/free-solid-svg-icons";
 
 const SubToolBarWrapper = styled.div`
   max-width: 300px;
@@ -51,22 +44,22 @@ const subToolBar = () => {
   return (
     <SubToolBarWrapper>
       <Tool position="first">
-        <FontAwesomeIcon icon={faThumbtack} />
+        <Icon className="fas fa-thumbtack" />
       </Tool>
       <Tool position="second">
         <Circle /> <Icon className="fas fa-angle-down" />
       </Tool>
       <Tool position="third">
-        <FontAwesomeIcon icon={faFont} />
+        <Icon className="fas fa-font" />
       </Tool>
       <Tool position="fouth">
-        <FontAwesomeIcon icon={faShapes} />
+        <Icon className="fas fa-shapes" />
       </Tool>
       <Tool position="fifth">
         <Icon className="fas fa-trash-alt" />
       </Tool>
       <Tool position="sixth">
-        <FontAwesomeIcon icon={faLink} />
+        <Icon className="fas fa-link" />
       </Tool>
       <Tool position="last">
         <Icon className="fas fa-ellipsis-v" />
