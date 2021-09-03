@@ -1,8 +1,33 @@
 .toolContainer {
-  height: 45px;
-  width: 306px;
-  left: 822px;
-  top: 364px;
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  width: 430px;
+  height: 45px;
+  left: 822px;
+  top: 364px;
+  background: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 9px;
+}
+
+.tools {
+  height: 34px;
+  width: 34px;
+  left: 1089px;
+  top: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  margin: 5px 5px 0px 5px;
+}
+
+img {
+  background: whitesmoke;
+  width: inherit;
+  margin: 5px;
+  border-radius: 9px;
 }

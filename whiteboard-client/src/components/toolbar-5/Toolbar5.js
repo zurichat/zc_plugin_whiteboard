@@ -11,7 +11,7 @@ import active from "./asset/active.svg";
 
 function Toolbar5() {
   return (
-    <div className="toobar">
+    <div>
       <div className="toolContainer">
         <div className="tools">
           <img src={pin} alt="" />
