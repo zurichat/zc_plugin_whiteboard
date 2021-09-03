@@ -21,5 +21,5 @@ jobs:
             pm2 ls
             pm2 stop whiteboard
             pm2 delete whiteboard
-            pm2 start index.js --name "whiteboard"
+            pm2 start npm --name "whiteboard" -- start
             pm2 save
