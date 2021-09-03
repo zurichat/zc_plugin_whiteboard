@@ -1,6 +1,6 @@
 const express = require("express");
 const http = require("http");
-const path = require("path")
+const routes = require('./Routes/router');
 require("dotenv").config();
 
 //initialize express
@@ -11,6 +11,8 @@ app.use("/public", express.static("public"));
 app.use(express.json());
 app.use(express.static(path.resolve(__dirname, '../whiteboard-client/build')));
 app.use(express.urlencoded({ extended: false }));
+
+app.use('/api', routes);
 
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, '../whiteboard-client/build', 'index.html'));
