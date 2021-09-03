@@ -24,6 +24,7 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/zc_plugin_whiteboard/
+            git clean -fd
             git pull
             cd /var/www/zc_plugin_whiteboard/whiteboard-client/
             npm update
