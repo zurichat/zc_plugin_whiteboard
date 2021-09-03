@@ -1,0 +1,17 @@
+.container{
+    width: 50%;
+    margin: auto;
+  }
+  .tool{
+    width: 205px;
+    height: 42px;
+    border-radius: 20px;
+    padding: 10px 10px 0 10px;
+    margin-top: 20px;
+    border: 2px solid rgb(243, 232, 232);
+    display: flex;
+    justify-content: space-between;
+  }
+  img{
+    margin-right: 5px;
+  }
