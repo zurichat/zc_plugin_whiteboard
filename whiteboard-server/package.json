@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "dev": "node app",
-    "test": "nodemon app"
+    "test": "nodemon app",
+    "build": "cd whiteboard-client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
