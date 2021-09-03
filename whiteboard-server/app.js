@@ -1,6 +1,7 @@
 const express = require("express");
 const http = require("http");
 const routes = require('./Routes/router');
+const path = require('path')
 require("dotenv").config();
 
 //initialize express
@@ -16,6 +17,11 @@ app.use('/api', routes);
 
 app.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, '../whiteboard-client/build', 'index.html'));
+});
+
+// redirect undefined routes
+app.use(function(req, res) {
+  res.redirect('/');
 });
 
 //Error handling
