@@ -12,3 +12,9 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+@media screen and (min-width: 767px) {
+  .App {
+    width: 100%
+  }
+}

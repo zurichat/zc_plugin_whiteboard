@@ -78,3 +78,9 @@ color: #FFFFFF;
 svg{
     width: 20px;
 }
+
+@media screen and (max-width: 767px) {
+  .sidebar-container {
+    width: 100vw
+  }
+}
