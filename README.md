@@ -6,6 +6,6 @@ First, run the development server:
 cd whiteboard-client/
 npm run dev
 # or
-cd hiteboard-server/
+cd whiteboard-server/
 npm run dev
 ```
