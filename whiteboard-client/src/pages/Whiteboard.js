@@ -7,18 +7,22 @@ import SideBar from "../components/sidebar-component/sidebar.js";
 import ShapeSelector from "../components/ShapesSelector/ShapeSelector";
 import SavedFileView from "../components/SavedFileView/SavedFileView";
 import ColorPicker from "../components/Colorpicker/Colorpicker";
+import Zoom from "../components/Zoom/Zoom";
 
 function Whiteboard() {
   return (
     <div className="App">
       <SideBar />
       <WhiteboardCanvas />
+
       {/* <header className="App-header">Zuri whiteboard plugin</header> */}
       <Participants />
       <ToolBar />
+
       <ColorPicker />
       <ShapeSelector />
       <SavedFileView />
+      <Zoom />
     </div>
   );
 }
