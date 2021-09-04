@@ -10,19 +10,14 @@ const app = express();
 //setting up express to parse incoming json body
 app.use("/public", express.static("public"));
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, '../whiteboard-client/build')));
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api', routes);
 
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../whiteboard-client/build', 'index.html'));
+  res.status(200).send("zuri whiteboard plugin");
 });
 
-// redirect undefined routes
-app.use(function(req, res) {
-  res.redirect('/');
-});
 
 //Error handling
 app.use((req, res, next) => {
