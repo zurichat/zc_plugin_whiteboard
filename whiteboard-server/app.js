@@ -18,13 +18,6 @@ app.get("/", (req, res) => {
   res.status(200).send("zuri whiteboard plugin");
 });
 
-// ///////Whiteboard download
-app.use(express.static(path.join(__dirname, 'downloader')));
-
-app.get('/download', (req, res) => {
-  res.sendFile(path.join(__dirname,'downloader', 'downloadtest.html'));
-});
-
 
 //Error handling
 app.use((req, res, next) => {
@@ -43,7 +36,7 @@ app.use((error, req, res, next) => {
 });
 
 //settiing up the server
-const PORT = process.env.PORT || 7000;
+const PORT = process.env.PORT || 5000;
 http.createServer({}, app).listen(PORT, function () {
   console.log(`App listening on port ${PORT}`);
 });
