@@ -1,0 +1,25 @@
+name: Zuri Whiteboard Start PM2
+
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Git Pull on Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.ZURI_MAIN_HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: |
+            cd /var/www/zc_plugin_whiteboard/whiteboard-client/src/
+            pm2 ls
+            pm2 stop whiteboard
+            pm2 delete whiteboard
+            pm2 start npm --name "whiteboard" -- start
+            pm2 save
