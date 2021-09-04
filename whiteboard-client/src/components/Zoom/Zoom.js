@@ -8,11 +8,11 @@ import "./Zoom.css";
 const Zoom = () => {
 
     const zoomOut=()=>{
-        alert('zoomout')
+        alert('zoom out')
     }
 
     const zoomIn=()=>{
-        alert('zoomin')
+        alert('zoom in')
     }
 
 
