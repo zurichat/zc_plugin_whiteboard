@@ -45,7 +45,7 @@ function Whiteboard() {
 
         </DispayWrapper>
 
-        <SaveWrapper>
+          <SaveWrapper>
           <SavedFileView />
           <ToolBar />
 
