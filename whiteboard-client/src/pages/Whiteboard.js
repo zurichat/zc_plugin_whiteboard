@@ -14,9 +14,11 @@ function Whiteboard() {
     <div className="App">
       <SideBar />
       <WhiteboardCanvas />
+
       {/* <header className="App-header">Zuri whiteboard plugin</header> */}
       <Participants />
       <ToolBar />
+
       <ColorPicker />
       <ShapeSelector />
       <SavedFileView />
