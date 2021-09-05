@@ -36,7 +36,7 @@ exports.updateUser = async (req, res, next) => {
     } else {
       res.status(200).json({ message: "Participant's profile updated", user });
     }
-  } catch (eerr) {
+  } catch (err) {
     throw(err);
   }
 };
@@ -50,7 +50,7 @@ exports.deleteUser = async (req, res, next) => {
       data: null,
       message: "Participant has been removed",
     });
-  } catch (error) {
-    throw(error);
+  } catch (err) {
+    throw(err);
   }
 };
