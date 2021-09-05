@@ -15,7 +15,6 @@ const Zoom = () => {
         alert('zoom in')
     }
 
-
     return (
         <div className="zoom-area">
         <div className="zoom-container">
