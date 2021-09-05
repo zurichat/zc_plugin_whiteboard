@@ -19,6 +19,8 @@ app.get("/", (req, res) => {
 app.use('/api', require('../whiteboard-server/routes/utils'))
 app.use('/api', require('../whiteboard-server/routes/meeting'))
 app.use('/api', require('../whiteboard-server/routes/router'))
+app.use('/api', require('../whiteboard-server/routes/userRoutes'))
+
 
 
 // ///////Whiteboard download
