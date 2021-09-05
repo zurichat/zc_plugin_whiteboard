@@ -1,7 +1,7 @@
 const express = require("express");
 const http = require("http");
 const routes = require('./Routes/router');
-const path = require('path')
+const path = require('path');
 require("dotenv").config();
 
 //initialize express
@@ -18,6 +18,12 @@ app.get("/", (req, res) => {
   res.status(200).send("zuri whiteboard plugin");
 });
 
+// ///////Whiteboard download
+app.use(express.static(path.join(__dirname, 'downloader')));
+
+app.get('/download', (req, res) => {
+  res.sendFile(path.join(__dirname,'downloader', 'downloadtest.html'));
+});
 
 //Error handling
 app.use((req, res, next) => {
