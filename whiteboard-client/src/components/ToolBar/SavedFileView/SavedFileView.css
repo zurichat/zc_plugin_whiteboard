@@ -3,9 +3,13 @@
 }
 .savedFiles {
   width: 300px;
-  height: 350px;
+  /* height: 350px; */
+  padding: 1rem;
   overflow-y: scroll;
   border-radius: 2px;
+  border-radius: 10px;
+  font-family: 'Lato';
+  margin: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 .savedFiles::-webkit-scrollbar {
@@ -80,7 +84,7 @@ h3 {
   cursor: pointer;
 }
 
-.icon svg {
+svg {
   fill: #999999;
 }
 .icon:hover svg path,

@@ -1,20 +1,21 @@
 {
-  "name": "whiteboard-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "dev": "node app",
-    "test": "nodemon app",
-    "build": "cd ../whiteboard-client && npm install && npm run build"
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "dotenv": "^10.0.0",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.12"
-  }
+    "name": "whiteboard-server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "dev": "node app",
+        "test": "nodemon app",
+        "build": "npm run build && cd ../whiteboard-client && npm install"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "accesscontrol": "^2.2.1",
+        "dotenv": "^10.0.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.12"
+    }
 }

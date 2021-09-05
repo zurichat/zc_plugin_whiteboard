@@ -9,16 +9,16 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     "styled-components": "^5.3.1",
     "web-vitals": "^1.0.1"
-=======
     "web-vitals": "^1.1.2",
     "styled-components": "^5.3.1"
->>>>>>> 770cc12a57793b8fa704595fb3edb89298a0d122
-=======
->>>>>>> 7f3ad6439b03bb9c51c3646cacf97ca44835054d
+
+    "styled-components": "^5.3.1",
+    "web-vitals": "^1.1.2",
+    "styled-components": "^5.3.1"
+
   },
   "scripts": {
     "start": "react-scripts start",
