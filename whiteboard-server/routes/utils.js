@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const utils = require('../resources/utils')
+const utils = require('../controllers/utils')
 
 router.get('/search', utils.search);
 

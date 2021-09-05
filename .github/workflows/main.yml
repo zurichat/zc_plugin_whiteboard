@@ -32,4 +32,5 @@ jobs:
             npm run build
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
             npm update
-            pm2 reload whiteboard 2>/dev/null || pm2 start index.js --name "whiteboard"
+            npm run build
+            pm2 reload whiteboard 2>/dev/null || pm2 start app.js --name "whiteboard"
