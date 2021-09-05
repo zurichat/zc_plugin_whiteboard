@@ -18,140 +18,140 @@ import person3 from "./visuals/person3.png"
 
 const SideBar = () => {
   return (
-    <section>
+    <section className="sidebar-container">
       <div className="logo">
-        <img src={zurilogo} alt=""/>
+        <img src={zurilogo} alt="" />
       </div>
       <div className="wrapper">
-        <div className="Hng"> 
-            <span>
-              <h3>HNG</h3>
-              <img src={activedropdown} alt=""/>
-            </span>
-              <span>
-                <img src={hngsvg} alt=""/>
-              </span>
+        <div className="Hng">
+          <span>
+            <h3>HNG</h3>
+            <img src={activedropdown} alt="" />
+          </span>
+          <span>
+            <img src={hngsvg} alt="" />
+          </span>
         </div>
         <div>
           <div className="container">
-              <span>
-                <img src={insight} alt=""/>
-              </span>
-              <p>Insight</p>
+            <span>
+              <img src={insight} alt="" />
+            </span>
+            <p>Insight</p>
           </div>
           <div className="container">
-              <span>
-                <img src={Thread} alt=""/>
-              </span>
-              <p>Threads</p>
+            <span>
+              <img src={Thread} alt="" />
+            </span>
+            <p>Threads</p>
           </div>
           <div className="container">
-              <span>
-                <img src={dms} alt=""/>
-              </span>
-              <p>All DMs</p>
+            <span>
+              <img src={dms} alt="" />
+            </span>
+            <p>All DMs</p>
           </div>
           <div className="container">
-              <span>
-                <img src={draft} alt=""/>
-              </span>
-              <p>Draft</p>
+            <span>
+              <img src={draft} alt="" />
+            </span>
+            <p>Draft</p>
           </div>
           <div className="container">
-              <span>
-                <img src={files} alt=""/>
-              </span>
-              <p>Files</p>
+            <span>
+              <img src={files} alt="" />
+            </span>
+            <p>Files</p>
           </div>
           <div className="container">
-              <span>
-                <img src={Integrate} alt=""/>
-              </span>
-              <p>Integrate</p>
+            <span>
+              <img src={Integrate} alt="" />
+            </span>
+            <p>Integrate</p>
           </div>
         </div>
         <div className="">
-        <div>
-              <div className="container">
-                <img src={downvector} alt=""/>
-                <p>Meeting Room</p>
+          <div>
+            <div className="container">
+              <img src={downvector} alt="" />
+              <p>Meeting Room</p>
               <span>
-                <img src={addicon} alt=""/>
+                <img src={addicon} alt="" />
               </span>
-              </div>
             </div>
-            <div className="container">
-              <img src={briefcase} alt=""/>
-              <p>Designers</p>
-            </div>
-            <div className="container">
-              <img src={briefcase} alt=""/>
-              <p>Team Seneca</p>
-            </div>
-            <div className="container">
-            <img src={briefcase} alt=""/>
-              <p>Team Leads Collab</p>
-            </div>
+          </div>
+          <div className="container">
+            <img src={briefcase} alt="" />
+            <p>Designers</p>
+          </div>
+          <div className="container">
+            <img src={briefcase} alt="" />
+            <p>Team Seneca</p>
+          </div>
+          <div className="container">
+            <img src={briefcase} alt="" />
+            <p>Team Leads Collab</p>
+          </div>
         </div>
         <div >
           <div className="container">
-              <div className="container">
-                <img src={downvector} alt=""/>
-                <p>Channels</p>
+            <div className="container">
+              <img src={downvector} alt="" />
+              <p>Channels</p>
               <span>
-                <img src={addicon} alt=""/>
+                <img src={addicon} alt="" />
               </span>
-              </div>
-            </div>
-            <div className="container">
-              <span>
-                <img src={hashtag} alt=""/>
-              </span>
-              <p>announcements</p>
-            </div>
-            <div className="container">
-              <span>
-                <img src={hashtag} alt=""/>
-              </span>
-              <p>games</p>
-            </div>
-            <div className="container">
-              <span>
-                <img src={hashtag} alt=""/>
-              </span>
-              <p>designers</p>
-            </div>
-            <div className="container">
-              <span>
-                <img src={hashtag} alt=""/>
-              </span>
-              <p>developers</p>
-            </div>
-        </div>
-        <div className="">
-            <div>
-              <div className="container">
-                <img src={downvector} alt=""/>
-                <p>Direct Messages</p>
-                <span>
-                  <img src={addicon} alt=""/>
-                </span>
-              </div>
-            </div>
-            <div className="container">
-              <img src={person1} alt=""/>
-              <p>John Doe</p>
-            </div>
-            <div className="container">
-              <img src={person2} alt=""/>
-              <p>John Doe</p>
-            </div>
-            <div className="container">
-              <img src={person3} alt=""/>
-              <p>John Doe</p>
             </div>
           </div>
+          <div className="container">
+            <span>
+              <img src={hashtag} alt="" />
+            </span>
+            <p>announcements</p>
+          </div>
+          <div className="container">
+            <span>
+              <img src={hashtag} alt="" />
+            </span>
+            <p>games</p>
+          </div>
+          <div className="container">
+            <span>
+              <img src={hashtag} alt="" />
+            </span>
+            <p>designers</p>
+          </div>
+          <div className="container">
+            <span>
+              <img src={hashtag} alt="" />
+            </span>
+            <p>developers</p>
+          </div>
         </div>
+        <div className="">
+          <div>
+            <div className="container">
+              <img src={downvector} alt="" />
+              <p>Direct Messages</p>
+              <span>
+                <img src={addicon} alt="" />
+              </span>
+            </div>
+          </div>
+          <div className="container">
+            <img src={person1} alt="" />
+            <p>John Doe</p>
+          </div>
+          <div className="container">
+            <img src={person2} alt="" />
+            <p>John Doe</p>
+          </div>
+          <div className="container">
+            <img src={person3} alt="" />
+            <p>John Doe</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 };

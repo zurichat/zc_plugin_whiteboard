@@ -23,7 +23,6 @@ const meetingSchema = new Schema({
         type: String,
         required: true
     },
-    timestamps: true
 })
 
 // Exports schemas
