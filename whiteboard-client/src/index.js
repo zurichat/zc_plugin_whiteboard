@@ -1,13 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import SideBar from "./components/sidebar-component/sidebar.js";
 import "./index.css";
-// import Whiteboard from "./pages/Whiteboard";
+import Whiteboard from "./pages/Whiteboard";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Whiteboard /> */}
-    <SideBar/>
+    <Whiteboard />
   </React.StrictMode>,
   document.getElementById("root")
 );
