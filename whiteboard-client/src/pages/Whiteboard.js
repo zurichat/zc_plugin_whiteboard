@@ -1,4 +1,6 @@
-import React from "react";
+// import React from "react";
+import React, { Component } from "react";
+import SubtoolBar from '../components/Subtoolbar.js';
 import "../App.css";
 import WhiteboardCanvas from "../components/Whiteboard-Canvas/WhiteboardCanvas";
 import Participants from "../components/Participants";
@@ -9,22 +11,42 @@ import SavedFileView from "../components/SavedFileView/SavedFileView";
 import ColorPicker from "../components/Colorpicker/Colorpicker";
 import SearchBar from "../components/SearchBar/SearchBar";
 
-function Whiteboard() {
-  return (
-    <div className="App">
-      <SideBar />
-      <WhiteboardCanvas />
 
-      {/* <header className="App-header">Zuri whiteboard plugin</header> */}
-      <Participants />
-      <ToolBar />
+class Whiteboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      show: true
+    };
+    this.showToolbarModal = this.showToolbarModal.bind(this);
+    this.hideToolbarModal = this.hideToolbarModal.bind(this);
+  }
 
-      <ColorPicker />
-      <ShapeSelector />
-      <SavedFileView />
-      <SearchBar />
-    </div>
-  );
+  showToolbarModal = () => {
+    this.setState({ show: true });
+  };
+
+  hideToolbarModal = () => {
+    this.setState({ show: false });
+  };
+
+  render(){
+  	return (
+      <div className="App">
+        <SideBar />
+        <WhiteboardCanvas />
+        <SubtoolBar show={this.state.show} handleClose={this.hideToolbarModal}></SubtoolBar>
+
+        {/* <header className="App-header">Zuri whiteboard plugin</header> */}
+        <Participants />
+        <ToolBar />
+        <ColorPicker />
+        <ShapeSelector />
+        <SavedFileView />
+        <SearchBar />
+      </div>
+  	);
+  };
 }
 
 export default Whiteboard;
