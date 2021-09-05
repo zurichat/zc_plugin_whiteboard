@@ -6,7 +6,7 @@ import "./index.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Whiteboard /> */}
+     {/* <Whiteboard />  */}
     <SideBar/>
   </React.StrictMode>,
   document.getElementById("root")

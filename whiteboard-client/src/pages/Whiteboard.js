@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+
 import Participants from "../components/Participants";
 import Toolbar5 from "../components/toolbar-5/Toolbar5";
 import WhiteboardCanvas from "../components/Whiteboard-Canvas/WhiteboardCanvas";
@@ -10,9 +11,11 @@ import ShapeSelector from "../components/ShapesSelector/ShapeSelector";
 import SavedFileView from "../components/SavedFileView/SavedFileView";
 import ColorPicker from "../components/Colorpicker/Colorpicker";
 
+
 function Whiteboard() {
   return (
     <div className="App">
+
       {/* <header className="App-header">Zuri whiteboard plugin</header> */}
       <Participants />
 
@@ -28,7 +31,9 @@ function Whiteboard() {
       <ShapeSelector />
 
       <SavedFileView />
-      </div>
+      
+
+    </div>
 
   );
 }
