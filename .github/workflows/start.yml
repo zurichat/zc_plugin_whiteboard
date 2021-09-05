@@ -18,4 +18,8 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
+            pm2 ls
+            pm2 stop whiteboard
+            pm2 delete whiteboard
             pm2 start app.js --name "whiteboard"
+            pm2 save
