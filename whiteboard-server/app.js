@@ -12,29 +12,29 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/api', routes);
-
+app.use('/', require('./Routes/meeting'));
 app.get("/", (req, res) => {
-  res.status(200).send("zuri whiteboard plugin");
+    res.status(200).send("zuri whiteboard plugin");
 });
 
 //Error handling
 app.use((req, res, next) => {
-  const error = new Error("Not Found");
-  error.status = 404;
-  next(error);
+    const error = new Error("Not Found");
+    error.status = 404;
+    next(error);
 });
 
 app.use((error, req, res, next) => {
-  res.status(error.status || 500);
-  res.json({
-    error: {
-      message: error.message,
-    },
-  });
+    res.status(error.status || 500);
+    res.json({
+        error: {
+            message: error.message,
+        },
+    });
 });
 
 //settiing up the server
 const PORT = process.env.PORT || 5000;
-http.createServer({}, app).listen(PORT, function () {
-  console.log(`App listening on port ${PORT}`);
+http.createServer({}, app).listen(PORT, function() {
+    console.log(`App listening on port ${PORT}`);
 });
