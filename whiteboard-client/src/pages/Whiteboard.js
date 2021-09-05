@@ -7,6 +7,7 @@ import SideBar from "../components/sidebar-component/sidebar.js";
 import ShapeSelector from "../components/ShapesSelector/ShapeSelector";
 import SavedFileView from "../components/SavedFileView/SavedFileView";
 import ColorPicker from "../components/Colorpicker/Colorpicker";
+import SearchBar from "../components/SearchBar/SearchBar";
 
 function Whiteboard() {
   return (
@@ -21,6 +22,7 @@ function Whiteboard() {
       <ColorPicker />
       <ShapeSelector />
       <SavedFileView />
+      <SearchBar />
     </div>
   );
 }
