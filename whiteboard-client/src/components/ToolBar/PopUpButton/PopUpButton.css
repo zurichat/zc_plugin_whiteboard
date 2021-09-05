@@ -1,0 +1,27 @@
+.popup-menu-container {
+  position: relative;
+}
+
+.button {
+    background-color: transparent;
+    border:none;
+}
+
+.popup-menu {
+  position: absolute;
+  z-index: 3;
+  transform: scale(0);
+  transform-origin: bottom left;
+  min-width: 10rem;
+  bottom: 5px;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+}
+
+.popup-menu.shown {
+  transform: scale(1);
+  transform: translate(-50%,-80px);
+  left: 50%;
+  
+}

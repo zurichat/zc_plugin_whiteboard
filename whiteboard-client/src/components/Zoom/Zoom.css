@@ -3,10 +3,6 @@
 .zoom-area {
     height: 100px;
     font-family: 'Lato', sans-serif;
-    position: relative;
-    top: -800px;
-    right: -550px;
-
 }
 
 .zoom-container {
@@ -19,7 +15,9 @@
     width: 223px;
     height: 48px;
     padding: 10px;
-    position: relative;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 
 
 }
