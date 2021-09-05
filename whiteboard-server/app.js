@@ -39,7 +39,7 @@ app.use((error, req, res, next) => {
 });
 
 //settiing up the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4400;
 http.createServer({}, app).listen(PORT, function() {
     console.log(`App listening on port ${PORT}`);
 });
