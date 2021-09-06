@@ -11,21 +11,9 @@ app.use("/public", express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-<<<<<
-app.use('/api', routes);
-app.use('/', require('./Routes/meeting'));
-
-//routes
-
 app.get("/", (req, res) => {
     res.status(200).send("zuri whiteboard plugin");
 });
-app.use('/api', require('../whiteboard-server/routes/utils'))
-app.use('/api', require('../whiteboard-server/routes/meeting'))
-app.use('/api', require('../whiteboard-server/routes/router'))
-app.use('/api', require('../whiteboard-server/routes/userRoutes'))
-
-
 
 // ///////Whiteboard download
 app.use(express.static(path.join(__dirname, 'downloader')));
@@ -51,7 +39,7 @@ app.use((error, req, res, next) => {
 });
 
 //settiing up the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4400;
 http.createServer({}, app).listen(PORT, function() {
     console.log(`App listening on port ${PORT}`);
 });
