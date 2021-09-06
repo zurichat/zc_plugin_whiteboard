@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "node app",
         "test": "nodemon app",
-        "build": "yarn run build && cd ../whiteboard-client && yarn install"
+        "build": "yarn install && cd ../whiteboard-client && yarn install && yarn run build"
     },
     "author": "",
     "license": "ISC",
