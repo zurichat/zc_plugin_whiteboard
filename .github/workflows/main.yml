@@ -27,10 +27,6 @@ jobs:
             git clean -fd
             git stash
             git pull
-            cd /var/www/zc_plugin_whiteboard/whiteboard-client/
-            npm update
-            npm run build
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
-            npm update
-            npm run build
+            yarn install
             pm2 reload whiteboard 2>/dev/null || pm2 start app.js --name "whiteboard"

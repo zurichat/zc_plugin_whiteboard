@@ -6,11 +6,12 @@
     "scripts": {
         "dev": "node app",
         "test": "nodemon app",
-        "build": "cd client && npm install && npm run build"
+        "build": "yarn install && cd ../whiteboard-client && yarn install && yarn run build"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "accesscontrol": "^2.2.1",
         "dotenv": "^10.0.0",
         "express": "^4.17.1"
     },
