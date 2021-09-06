@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+
+.zoom-area {
+    height: 100px;
+    font-family: 'Lato', sans-serif;
+}
+
+.zoom-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 2rem;
+    border: 2px solid #00B87C;
+    border-radius: 10px;
+    width: 223px;
+    height: 48px;
+    padding: 10px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+
+}
+
+.zoom-amount {
+    font-size: 15px;
+    font-weight: 900;
+    color: #999999;
+}
+
+.zoom-out img,
+.zoom-in img {
+    height: 1.5rem;
+    padding: .3rem;
+    cursor: pointer;
+    
+    fill: #ffff;
+}
+
+
+.reset {
+    border: 2px solid #00B87C;
+    border-radius: 5px;
+
+    width: 50px;
+    color: #00B87C;
+
+}
+
+.reset-btn {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    padding: 1px 2px;
+    cursor: pointer;
+    font-family: 'Lato', sans-serif;
+    background: #FFFFFF;
+    color: #00B87C;
+    font-weight: 500;
+
+
+}

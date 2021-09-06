@@ -2,10 +2,13 @@
   width: 134px;
   height: 143px;
   margin: 0% auto;
-  border: #999999 solid 1px;
-  background-color: #ffffff;
+
+  background: #ffffff;
+  border-radius: 13px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
   justify-content: center;
   align-items: center;
 }
