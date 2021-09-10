@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+.container{
+    position: relative;
+}
+
+select{
+    border: 0px;
+    outline: 0px;
+}
+
+input{
+    width:30px;
+    border: none;
+    outline: none;
+   
+}
+
+input:focus{
+outline:none !important;
+}
+.text-editor-header{
+   padding:5px;
+   box-shadow:3px 3px 10px 5px rgba(0,0,0,0.06);
+   display:flex;
+   width:460px; 
+   height:40px;
+   position:absolute;
+   top:170px;
+   bottom:0;
+   left:0;
+   right:0;
+   margin:auto; 
+   transition: border 1s ease-in;
+
+}
+
+
+.text-editor-header:hover{
+ 
+    border:3px solid blue;
+ }
+
+.text-editor-header .btn{
+   border:none;
+   outline:none;
+   margin-right:7px;
+   padding:4px;
+   background-color: transparent;
+  
+ }
+
+.color{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+  
+}
+
+.font-style{
+    display:flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+
+.top{
+    position: relative;
+}
+.circles{
+width:150px;
+justify-content: center;
+flex-wrap:wrap;
+height:60px;
+
+display:flex;
+position:absolute;
+top:-70px;
+right:-40px;
+}
+
+.circle{
+    width:20px;
+    height:20px;
+    background-color:yellow;
+    border-radius: 50%;
+    padding:4px;
+    margin:4px;
+}
+
+.circle-1{
+background-color:#F2994A;
+}
+
+.circle-2{
+    background-color:#EB5757;
+}
+
+.circle-3{
+    background-color:#F2C94C;
+}
+.circle-4{
+    background-color:#219653;
+}
+.circle-5{
+    background-color:#E0E0E0;
+}
+.circle-6{
+    background-color:#2F80ED;
+}
+.circle-7{
+    background-color:#56CCF2;
+}
+.circle-8{
+    background-color:#9B51E0;
+}
+.circle-9{
+    background-color:#BB6BD9;
+}
+.circle-10{
+    background-color:#4F4F4F;
+}
+
+.fas .fa-font{
+    font-family: 'Font Awesome\ 5 Free', Lato;
+}
+textarea {
+   
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-family: 'Lato', sans-serif;
+    position: absolute;
+    top:180px;
+   
+    
+  }
+
+  
