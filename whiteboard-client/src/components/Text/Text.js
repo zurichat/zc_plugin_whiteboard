@@ -9,7 +9,7 @@ export const Text = () => {
       <div className="text-editor-header">
         <button>
           <form>
-            <input type="number" min="1" max="100" placeholder="1" /> 
+            <input type="number" min="1" max="100" placeholder="1" />  
           </form>
         </button>
 
