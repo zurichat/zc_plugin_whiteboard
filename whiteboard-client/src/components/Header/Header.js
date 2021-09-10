@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Participants from "./Participants";
+import Export from "../export/export";
 
 const Header = () => {
   const Wrapper = styled.div`
@@ -21,7 +22,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Title>Brainstorming Session</Title>
-      <Participants />
+      <Export />
     </Wrapper>
   );
 };
