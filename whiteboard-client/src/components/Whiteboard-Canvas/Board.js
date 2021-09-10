@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import styled from "styled-components";
 
+let drawColor = "blue"
+export const eraseDraw = (color) => drawColor = color
 const Board = () => {
 
   const drawOnBoard = () => {
@@ -63,6 +65,11 @@ const Board = () => {
         let base64ImageData = canvas.toDataURL("image/png");
         console.log(base64ImageData)
       }, 1000);
+      canvasCtx.strokeStyle = drawColor;
+      canvasCtx.lineWidth = 5;
+      if (drawColor === "white") {
+        canvasCtx.lineWidth = 10;
+      }
     };
   };
 
@@ -90,7 +97,7 @@ const Board = () => {
 
   return (
     <Sketch id="sketch">
-        <Canvas id="board" />
+      <Canvas id="board" />
     </Sketch>
   );
 };

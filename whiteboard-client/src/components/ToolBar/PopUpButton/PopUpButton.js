@@ -4,7 +4,7 @@ import "./PopUpButton.css";
 const PopUpButton = ({ content, popUpMenu }) => {
   const [isShown, setIsShown] = useState(false);
   const dropDown = useRef(null);
-  
+
   const handleToggleButtonClick = () => {
     setIsShown(!isShown);
   };

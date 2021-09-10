@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import SavedFileView from "./SavedFileView/SavedFileView";
 import PopUpButton from "./PopUpButton/PopUpButton";
+import EraserTool from "./EraserTool/EraserTool";
+import { eraseDraw } from "../Whiteboard-Canvas/Board"
+
 function ToolBar() {
+  const [eraseActive, setEraseActive] = useState(false)
+
+  const toggleEraser = () => {
+    setEraseActive(!eraseActive)
+    erase()
+  }
+
+  const erase = () => {
+    if (eraseActive) {
+      eraseDraw("white")
+    } else {
+      eraseDraw("blue")
+    }
+  }
+
   const Wrapper = styled.div`
     margin: auto;
     border-radius: 9px;
@@ -97,57 +115,61 @@ function ToolBar() {
         </svg>
       </Icon>
 
-      <Icon>
-        <svg
-          width="21"
-          height="20"
-          viewBox="0 0 21 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M13 17H20V19H11L7.00195 19.002L0.514954 12.515C0.327483 12.3274 0.222168 12.0731 0.222168 11.808C0.222168 11.5428 0.327483 11.2885 0.514954 11.101L11.12 0.49397C11.2128 0.400994 11.3231 0.327235 11.4445 0.276911C11.5659 0.226586 11.696 0.200684 11.8275 0.200684C11.9589 0.200684 12.089 0.226586 12.2104 0.276911C12.3318 0.327235 12.4421 0.400994 12.535 0.49397L20.313 8.27197C20.5004 8.4595 20.6057 8.71381 20.6057 8.97897C20.6057 9.24413 20.5004 9.49844 20.313 9.68597L13 17ZM14.657 12.515L18.192 8.97897L11.828 2.61497L8.29295 6.15097L14.657 12.515Z"
-            fill="black"
-          />
-        </svg>
-      </Icon>
+      <PopUpButton
+        content={<Icon onClick={toggleEraser}>
+          <svg
+            width="21"
+            height="20"
+            viewBox="0 0 21 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M13 17H20V19H11L7.00195 19.002L0.514954 12.515C0.327483 12.3274 0.222168 12.0731 0.222168 11.808C0.222168 11.5428 0.327483 11.2885 0.514954 11.101L11.12 0.49397C11.2128 0.400994 11.3231 0.327235 11.4445 0.276911C11.5659 0.226586 11.696 0.200684 11.8275 0.200684C11.9589 0.200684 12.089 0.226586 12.2104 0.276911C12.3318 0.327235 12.4421 0.400994 12.535 0.49397L20.313 8.27197C20.5004 8.4595 20.6057 8.71381 20.6057 8.97897C20.6057 9.24413 20.5004 9.49844 20.313 9.68597L13 17ZM14.657 12.515L18.192 8.97897L11.828 2.61497L8.29295 6.15097L14.657 12.515Z"
+              fill="black"
+            />
+          </svg>
+        </Icon>
+        }
+        popUpMenu={<EraserTool />}
+      />
 
-      <PopUpButton 
-      content={<Icon>
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 2C0 0.89543 0.895431 0 2 0H16C17.1046 0 18 0.895431 18 2V16C18 17.1046 17.1046 18 16 18H2C0.89543 18 0 17.1046 0 16V2Z"
-            fill="#585858"
-          />
-        </svg>
-      </Icon>}
-      popUpMenu={<ShapeSelector />}
+      <PopUpButton
+        content={<Icon>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 2C0 0.89543 0.895431 0 2 0H16C17.1046 0 18 0.895431 18 2V16C18 17.1046 17.1046 18 16 18H2C0.89543 18 0 17.1046 0 16V2Z"
+              fill="#585858"
+            />
+          </svg>
+        </Icon>}
+        popUpMenu={<ShapeSelector />}
       />
 
 
       <PopUpButton
-      content={<Icon>
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 11L11.883 11.007C11.6598 11.0333 11.4519 11.1341 11.293 11.293C11.1341 11.4519 11.0333 11.6598 11.007 11.883L11 12V18H0.998C0.734017 18.0005 0.480621 17.8962 0.293488 17.71C0.106355 17.5239 0.000794596 17.271 0 17.007V0.993C0 0.445 0.445 0 0.993 0H17.007C17.555 0 18 0.447 18 0.999V11H12ZM18 13L13 17.997V13H18Z"
-            fill="black"
-          />
-        </svg>
-      </Icon>}
-      popUpMenu={<SavedFileView />}
-       />
+        content={<Icon>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 18 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 11L11.883 11.007C11.6598 11.0333 11.4519 11.1341 11.293 11.293C11.1341 11.4519 11.0333 11.6598 11.007 11.883L11 12V18H0.998C0.734017 18.0005 0.480621 17.8962 0.293488 17.71C0.106355 17.5239 0.000794596 17.271 0 17.007V0.993C0 0.445 0.445 0 0.993 0H17.007C17.555 0 18 0.447 18 0.999V11H12ZM18 13L13 17.997V13H18Z"
+              fill="black"
+            />
+          </svg>
+        </Icon>}
+        popUpMenu={<SavedFileView />}
+      />
 
       <Icon>
         <svg
