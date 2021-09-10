@@ -7,6 +7,7 @@ import SearchBar from "../components/SearchBar/SearchBar";
 import Zoom from "../components/Zoom/Zoom";
 import Header from "../components/Header/Header";
 import Board from "../components/Whiteboard-Canvas/Board";
+
 import Collaborator from "../components/Collaborators/Collaborator";
 import Pointer from "../components/Collaborators/Pointer"
 import CollabData from "../components/Collaborators/collabData.js"
@@ -16,6 +17,9 @@ const Temp = styled.div`
   grid-template-columns:repeat(2,100px)
 `
 
+import Text from "../components/Text/Text";
+
+
 function Whiteboard() {
 
   return (
@@ -23,10 +27,10 @@ function Whiteboard() {
       <SearchBar />
       <Header />
       {/* <WhiteboardCanvas /> */}
-
       <Board />
       <ToolBar />
       <Zoom />
+      <Text />
       <Temp>
       {CollabData.map(person=>{
         return (
