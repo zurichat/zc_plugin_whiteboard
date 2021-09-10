@@ -9,7 +9,7 @@ import Header from "../components/Header/Header";
 import Board from "../components/Whiteboard-Canvas/Board";
 import Collaborator from "../components/Collaborators/Collaborator";
 import Pointer from "../components/Collaborators/Pointer"
-
+import CollabData from "../components/Collaborators/collabData.js"
 
 const Temp = styled.div`
   display:grid;
@@ -17,31 +17,26 @@ const Temp = styled.div`
 `
 
 function Whiteboard() {
-  const collaborators = [
-    {id:1,name:"james",order:"first"},
-    {id:2,name:"Kamzzy",order:"second"},
-    {id:3,name:"Tamara",order:"third"},
-    {id:4,name:"Snow",order:"fourth"}
-  ]
+
   return (
     <div className="App">
       <SearchBar />
       <Header />
       {/* <WhiteboardCanvas /> */}
+
+      <Board />
+      <ToolBar />
+      <Zoom />
       <Temp>
-      {collaborators.map(person=>{
+      {CollabData.map(person=>{
         return (
          <Collaborator key={person.id} order={person.order} >
           <Pointer order={person.order} className="fas fa-mouse-pointer"/>
           {person.name}
         </Collaborator>
         )
-        
       })}
       </Temp>
-      <Board />
-      <ToolBar />
-      <Zoom />
     </div>
   );
 }
