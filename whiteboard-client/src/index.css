@@ -1,9 +1,9 @@
-body{
-  background-color: #FFFFFF;
+body {
+  background-color: #ffffff;
 }
 
 .toolbar-wrapper {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   width: 544px;
   height: 59px;
   border-radius: 9px;
@@ -11,16 +11,15 @@ body{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 1px solid #E1E1E1
+  border: 1px solid #e1e1e1;
 }
-.icon{
-  border: 1px solid #C4C4C4;
+.icon {
+  border: 1px solid #c4c4c4;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 10px 10px 5px 10px;
 }
 .icon:hover {
-  background-color: #00B87C;
+  background-color: #00b87c;
   margin-top: 4px;
 }
-

@@ -7,6 +7,7 @@ import Zoom from "../components/Zoom/Zoom";
 import Header from "../components/Header/Header";
 import Board from "../components/Whiteboard-Canvas/Board";
 import Text from "../components/Text/Text";
+import StickyNote from "../components/StickyNote/StickyNote";
 
 function Whiteboard() {
   return (
@@ -18,6 +19,7 @@ function Whiteboard() {
       <ToolBar />
       <Zoom />
       <Text />
+      <StickyNote />
     </div>
   );
 }

@@ -1,0 +1,30 @@
+.StickyTools {
+  position: absolute;
+  top: -55px;
+  left: 50%;
+  width: 250px;
+  height: 42px;
+  padding: 0 16px;
+  background-color: white;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  justify-items: center;
+  align-items: center;
+  animation: animate 0.3s forwards;
+}
+
+@keyframes animate {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}

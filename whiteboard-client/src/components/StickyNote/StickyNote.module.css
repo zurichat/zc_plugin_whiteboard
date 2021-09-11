@@ -1,0 +1,13 @@
+.Container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  padding: 10px;
+  transition: all 0.1s;
+}
+
+.Active {
+  border: 2px solid transparent;
+  border-color: #00b87c;
+}
