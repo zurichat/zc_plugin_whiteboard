@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Participants from "./Participants";
+// import Participants from "./Participants";
 import Export from "../export/export";
 
 const Header = () => {
