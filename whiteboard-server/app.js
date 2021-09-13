@@ -6,11 +6,6 @@ require("dotenv").config();
 //initialize express
 const app = express();
 
-//setting up express to parse incoming json body
-app.use("/public", express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
 app.use(express.static(path.join(__dirname, '../whiteboard-client/build')));
 
 app.get('/', (req,res) => {
@@ -41,7 +36,7 @@ app.use((error, req, res, next) => {
 });
 
 //settiing up the server
-const PORT = process.env.PORT || 4400;
+const PORT = process.env.PORT || 5000;
 http.createServer({}, app).listen(PORT, function() {
     console.log(`App listening on port ${PORT}`);
 });
