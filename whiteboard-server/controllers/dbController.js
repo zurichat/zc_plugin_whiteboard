@@ -7,7 +7,7 @@ class ConnectDatabase {
   constructor(collection_name) {
     this.data = {
       plugin_id : "613ad7f916dd8d4dde70e571",
-      organization_id : "not yet available", //Having issues with zuri_core on getting this...
+      organization_id : "613fa96c6173056af01b4b28",
       collection_name: collection_name,
       bulk_write: false,
       object_id: "",
@@ -34,7 +34,7 @@ class ConnectDatabase {
     try {
       this.data.filter = filter;
       const response = await axios.get(
-        `${readDatabase}/ ${this.data.plugin_id}/ ${this.data.collection_name}/ ${this.data.organization_id}`
+        `${readDatabase}/${this.data.plugin_id}/${this.data.collection_name}/${this.data.organization_id}`
       );
 
       return response.data;
@@ -48,7 +48,7 @@ class ConnectDatabase {
   fetchOne = async (query) => {
     try {
       const response = await axios.get(
-        `${readDatabase}/ ${this.data.plugin_id}/ ${this.data.collection_name}/ ${this.data.organization_id}?${Object.keys(query)}=$(Object.values(query))`
+        `${readDatabase}/${this.data.plugin_id}/${this.data.collection_name}/${this.data.organization_id}?${Object.keys(query)}=$(Object.values(query))`
       );
 
       return response.data;
