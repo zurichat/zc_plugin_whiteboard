@@ -12,12 +12,12 @@ import Collaborator from "../components/Collaborators/Collaborator";
 import Pointer from "../components/Collaborators/Pointer"
 import CollabData from "../components/Collaborators/collabData.js"
 
+import Text from "../components/Text/Text";
+
 const Temp = styled.div`
   display:grid;
   grid-template-columns:repeat(2,100px)
 `
-
-import Text from "../components/Text/Text";
 
 
 function Whiteboard() {
