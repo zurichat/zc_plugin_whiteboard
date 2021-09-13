@@ -17,6 +17,12 @@ app.get('/', (req,res) => {
   res.sendFile(path.join(__dirname, '../whiteboard-client/build/index.html'));
 });
 
+////////////////////
+app.get("/api", (req, res) => {
+    res.json({ message: "Hello from server!" });
+  });
+  
+
 // ///////Whiteboard download
 app.use(express.static(path.join(__dirname, 'downloader')));
 
@@ -41,7 +47,7 @@ app.use((error, req, res, next) => {
 });
 
 //settiing up the server
-const PORT = process.env.PORT || 4400;
+const PORT = process.env.PORT || 5000;
 http.createServer({}, app).listen(PORT, function() {
     console.log(`App listening on port ${PORT}`);
 });
