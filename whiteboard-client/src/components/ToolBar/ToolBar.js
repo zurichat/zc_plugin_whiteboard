@@ -10,6 +10,7 @@ function ToolBar() {
     border-radius: 9px;
     padding: 15px;
     display: flex;
+    background-color: #fff;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.05),

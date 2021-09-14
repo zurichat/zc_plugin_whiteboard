@@ -16,7 +16,7 @@ export default function Zoom() {
   };
   return (
     <div className="zoom">
-      <div className="Invisible" onClick={hideZoomComponent}></div>
+      {/* <div className="Invisible" onClick={hideZoomComponent}></div> */}
       <div
         className="zoom-component-after"
         style={{ display: isZoom ? "flex" : "none" }}
