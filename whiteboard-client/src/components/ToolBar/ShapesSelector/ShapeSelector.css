@@ -1,18 +1,23 @@
+/*.shapeSelector {
+  position: relative;
+}*/
 .shapesContainer {
-  width: 134px;
-  height: 143px;
+  width: 11.5rem;
+  height: 12.8rem;
   margin: 0% auto;
-
+  position: absolute;
+  bottom: 0.5%;
+  left: 50%;
   background: #ffffff;
   border-radius: 13px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
   justify-content: center;
   align-items: center;
 }
 
 .shapes {
+  position: absolute;
   cursor: pointer;
 }
