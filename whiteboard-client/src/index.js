@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-// import Whiteboard from "./pages/Whiteboard";
-import NewWhiteboard from "./pages/NewWhiteboard";
+import Whiteboard from "./Whiteboard";
+// import NewWhiteboard from "./pages/NewWhiteboard";
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Whiteboard /> */}
-    <NewWhiteboard />
+    <Whiteboard />
   </React.StrictMode>,
   document.getElementById("root")
 );
