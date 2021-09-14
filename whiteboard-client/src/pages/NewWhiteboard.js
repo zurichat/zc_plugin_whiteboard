@@ -1,33 +1,28 @@
-import React from "react";
+import React from 'react';
 import styled from "styled-components"
 import "../App.css";
-// import WhiteboardCanvas from "../components/Whiteboard-Canvas/WhiteboardCanvas";
 import ToolBar from "../components/ToolBar/ToolBar";
 import SearchBar from "../components/SearchBar/SearchBar";
 import Zoom from "../components/Zoom/Zoom";
 import Header from "../components/Header/Header";
 import Board from "../components/Whiteboard-Canvas/Board";
-// import Export from "../components/export/export";
 
 import Collaborator from "../components/Collaborators/Collaborator";
 import Pointer from "../components/Collaborators/Pointer"
 import CollabData from "../components/Collaborators/collabData.js"
 
 import Text from "../components/Text/Text";
-
 const Temp = styled.div`
   display:grid;
   grid-template-columns:repeat(2,100px)
 `
 
 
-function Whiteboard() {
-
-  return (
-    <div className="App">
+const NewWhiteboard = () => {
+    return (
+        <div className="App">
       <SearchBar />
       <Header />
-      {/* <Export/> */}
       {/* <WhiteboardCanvas /> */}
       <Board />
       <ToolBar />
@@ -44,7 +39,7 @@ function Whiteboard() {
       })}
       </Temp>
     </div>
-  );
+    );
 }
 
-export default Whiteboard;
+export default NewWhiteboard
