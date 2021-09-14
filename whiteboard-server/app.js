@@ -1,15 +1,15 @@
 const express = require("express");
 const http = require("http");
 const path = require('path');
+const router = require("./routes/router");
+const { PORT } = require('./config');
 require("dotenv").config();
+
 
 //initialize express
 const app = express();
 
-//setting up express to parse incoming json body
-app.use("/public", express.static("public"));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use("/api", router);
 
 app.use(express.static(path.join(__dirname, '../whiteboard-client/build')));
 
@@ -40,8 +40,8 @@ app.use((error, req, res, next) => {
     });
 });
 
-//settiing up the server
-const PORT = process.env.PORT || 4400;
-http.createServer({}, app).listen(PORT, function() {
-    console.log(`App listening on port ${PORT}`);
-});
+
+// The server should start listening
+app.listen(PORT, () => {
+    console.log(`Server is listening on port http://127.0.0.1:${PORT}`);
+  });
