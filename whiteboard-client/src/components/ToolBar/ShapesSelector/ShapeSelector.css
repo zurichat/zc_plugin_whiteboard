@@ -1,7 +1,8 @@
 .shapesContainer {
-  width: 134px;
+  width: 143px;
   height: 143px;
   margin: 0% auto;
+  padding: 10px;
 
   background: #ffffff;
   border-radius: 13px;
@@ -9,10 +10,15 @@
   grid-template-columns: 1fr 1fr 1fr;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-  justify-content: center;
-  align-items: center;
 }
 
 .shapes {
   cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+
+.shapes>img:hover {
+  filter: brightness(0.5);
+  /* box-shadow: #00B87C 0px 1px 2px 2px; */
 }

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import { Stage, Layer, Text } from "react-konva";
 import Circ from "../../elements/Circ";
 
@@ -6,23 +6,18 @@ const Canvas = () => {
   const stageEl = React.createRef();
   const layerEl = React.createRef();
 
-  const getRandomInt = max => {
+  const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
   };
 
-  const [circles, setCircles] = useState([
-    {
-        x: getRandomInt(500),
-        y: getRandomInt(500),
-        width: 100,
-        height: 100,
-        fill: "red",
-        id: `circ${getRandomInt(100)}`,
-      }
-  ]);
+  const [circles, setCircles] = useState();
   const [selectedId, selectShape] = useState(null);
   const [shapes, setShapes] = useState([]);
 
+  useEffect(() => {
+    const allCircles = JSON.parse(localStorage.getItem("circles"));
+    setCircles(allCircles || []);
+  }, []);
 
   return (
     <Stage
@@ -38,9 +33,10 @@ const Canvas = () => {
         }
       }}
     >
-      <Layer  ref={layerEl}>
-        <Text text="This is the canvas!"/>
-        {circles.map((circle, i) => {
+      <Layer ref={layerEl}>
+        <Text text="This is the canvas!" />
+        {circles &&
+          circles.map((circle, i) => {
             return (
               <Circ
                 key={i}
@@ -49,7 +45,7 @@ const Canvas = () => {
                 onSelect={() => {
                   selectShape(circle.id);
                 }}
-                onChange={newAttrs => {
+                onChange={(newAttrs) => {
                   const circs = circles.slice();
                   circs[i] = newAttrs;
                   setCircles(circs);
