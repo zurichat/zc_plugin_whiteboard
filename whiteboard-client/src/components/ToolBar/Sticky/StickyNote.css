@@ -1,0 +1,71 @@
+.sticky-container{
+  margin-bottom: 50px;
+  height: 200px;
+  width: 200px;
+}
+.note-form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.textarea {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border: none;
+  background: #FFA740;
+  min-width: 100%;
+  max-width: 100%;
+  height: 165px;
+  padding: 10px;
+  outline: none;
+  resize: none;
+}
+.add-btn {
+  width: 100%;
+  background-color: #fff27f;
+  cursor: pointer;
+  padding: 10px; 
+  border: 0;
+  outline: none;
+}
+.add-btn:hover {
+  background-color: tomato;
+  color: white;
+}
+
+.note {
+  position: absolute;
+  cursor: pointer;
+  background-color: rgba(255, 167, 64, 1);
+  background-size: cover;
+  top: -220px;
+  left: 250px;
+  height: 200px;
+  border:  none;
+  width: 200px;
+  cursor: grab;
+  padding: 20px;
+}
+.text {
+  font-size: large;
+  font-weight: bolder;
+  height: 100%;
+  width: 100%;
+  white-space: pre-wrap;
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 167, 64, 1); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: rgb(202, 136, 59); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}
