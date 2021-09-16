@@ -5,10 +5,9 @@ import Participants from "./Participants";
 const Header = () => {
   const Wrapper = styled.div`
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     `;
-    const Title = styled.h2`
+  const Title = styled.h2`
     text-align: center;
     flex: 1;
     font-family: "Lato";
@@ -21,7 +20,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Title>Brainstorming Session</Title>
-      <Participants />
+      {/* <Participants /> */}
     </Wrapper>
   );
 };

@@ -1,10 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+.zoom {
+  position: fixed;
+  right: 22px;
+  bottom: 32px;
+}
+
 .zoom-component-after {
   width: 196px;
   height: 48px;
   position: absolute;
-  right: 42px;
-  bottom: 62px;
+  right: 22px;
+  bottom: 32px;
   background: #ffffff;
   border: 1px solid #00b87c;
   box-sizing: border-box;
@@ -74,8 +80,8 @@
   width: 48px;
   height: 48px;
   position: absolute;
-  right: 42px;
-  bottom: 62px;
+  right: 22px;
+  bottom: 32px;
   background: #00b87c;
   border-radius: 10px;
   color: #ffffff;

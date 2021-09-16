@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Whiteboard from "./pages/Whiteboard";
+import Whiteboard from "./Whiteboard";
+// import NewWhiteboard from "./pages/NewWhiteboard";
 
 ReactDOM.render(
   <React.StrictMode>
