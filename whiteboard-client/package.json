@@ -1,5 +1,5 @@
 {
-  "name": "@zuri/whiteboard-plugin",
+  "name": "@zuri/zuri-plugin-whiteboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
