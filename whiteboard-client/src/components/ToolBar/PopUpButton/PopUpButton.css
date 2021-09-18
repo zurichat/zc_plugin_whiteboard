@@ -22,4 +22,10 @@
   transform: scale(1);
   transform: translate(-50%, -80px);
   left: 50%;
+  transform: translate(44%, -160%);
+  left: 50%;
+  -webkit-transform: translate(44%, -160%);
+  -moz-transform: translate(44%, -160%);
+  -ms-transform: translate(44%, -160%);
+  -o-transform: translate(44%, -160%);
 }

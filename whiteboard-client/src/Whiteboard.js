@@ -27,7 +27,7 @@ function Whiteboard() {
       <Canvas />
       <ToolBar />
       <Zoom />
-{/*       
+      {/*
       {CollabData.map(person=>{
         return (
          <Collaborator key={person.id} order={person.order} >

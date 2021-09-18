@@ -20,4 +20,11 @@
 .shapes {
   position: absolute;
   cursor: pointer;
+  text-align: center;
+  align-self: center;
+}
+
+.shapes>img:hover {
+  filter: brightness(0.5);
+  /* box-shadow: #00B87C 0px 1px 2px 2px; */
 }
