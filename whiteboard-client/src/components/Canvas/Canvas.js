@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import { Stage, Layer, Text } from "react-konva";
-import Circ from "../../elements/Circ";
+//import Circ from "../../elements/Circ";
 
 const Canvas = () => {
   const stageEl = React.createRef();
@@ -38,26 +38,6 @@ const Canvas = () => {
         }
       }}
     >
-      <Layer  ref={layerEl}>
-        <Text text="This is the canvas!"/>
-        {circles.map((circle, i) => {
-            return (
-              <Circ
-                key={i}
-                shapeProps={circle}
-                isSelected={circle.id === selectedId}
-                onSelect={() => {
-                  selectShape(circle.id);
-                }}
-                onChange={newAttrs => {
-                  const circs = circles.slice();
-                  circs[i] = newAttrs;
-                  setCircles(circs);
-                }}
-              />
-            );
-          })}
-      </Layer>
     </Stage>
   );
 };
