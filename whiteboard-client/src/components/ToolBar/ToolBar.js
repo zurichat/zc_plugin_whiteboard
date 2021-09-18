@@ -4,6 +4,8 @@ import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import SavedFileView from "./SavedFileView/SavedFileView";
 import PopUpButton from "./PopUpButton/PopUpButton";
+import { UploadTool } from "../uploadTool/Uploadtool";
+
 function ToolBar() {
   const Wrapper = styled.div`
     margin: auto;
@@ -113,42 +115,53 @@ function ToolBar() {
         </svg>
       </Icon>
 
-      <PopUpButton 
-      content={<Icon>
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 2C0 0.89543 0.895431 0 2 0H16C17.1046 0 18 0.895431 18 2V16C18 17.1046 17.1046 18 16 18H2C0.89543 18 0 17.1046 0 16V2Z"
-            fill="#585858"
-          />
-        </svg>
-      </Icon>}
-      popUpMenu={<ShapeSelector />}
+      <PopUpButton
+        content={
+          <Icon>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 2C0 0.89543 0.895431 0 2 0H16C17.1046 0 18 0.895431 18 2V16C18 17.1046 17.1046 18 16 18H2C0.89543 18 0 17.1046 0 16V2Z"
+                fill="#585858"
+              />
+            </svg>
+          </Icon>
+        }
+        popUpMenu={<ShapeSelector />}
       />
 
-
       <PopUpButton
-      content={<Icon>
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 18 18"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M12 11L11.883 11.007C11.6598 11.0333 11.4519 11.1341 11.293 11.293C11.1341 11.4519 11.0333 11.6598 11.007 11.883L11 12V18H0.998C0.734017 18.0005 0.480621 17.8962 0.293488 17.71C0.106355 17.5239 0.000794596 17.271 0 17.007V0.993C0 0.445 0.445 0 0.993 0H17.007C17.555 0 18 0.447 18 0.999V11H12ZM18 13L13 17.997V13H18Z"
-            fill="black"
-          />
-        </svg>
-      </Icon>}
-      popUpMenu={<SavedFileView />}
-       />
+        content={
+          <Icon>
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 11L11.883 11.007C11.6598 11.0333 11.4519 11.1341 11.293 11.293C11.1341 11.4519 11.0333 11.6598 11.007 11.883L11 12V18H0.998C0.734017 18.0005 0.480621 17.8962 0.293488 17.71C0.106355 17.5239 0.000794596 17.271 0 17.007V0.993C0 0.445 0.445 0 0.993 0H17.007C17.555 0 18 0.447 18 0.999V11H12ZM18 13L13 17.997V13H18Z"
+                fill="black"
+              />
+            </svg>
+          </Icon>
+        }
+        popUpMenu={<SavedFileView />}
+      />
+      <PopUpButton
+        content={
+          <Icon className="fas fa-upload">
+            {/* <i className="fas fa-upload"></i> */}
+          </Icon>
+        }
+        popUpMenu={<UploadTool />}
+      />
 
       <Icon>
         <svg
