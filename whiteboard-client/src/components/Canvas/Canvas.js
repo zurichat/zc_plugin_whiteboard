@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Stage, Layer, Text } from "react-konva";
+import { Stage, Layer, Text, Circ } from "react-konva";
 //import Circ from "../../elements/Circ";
 
 const Canvas = () => {
