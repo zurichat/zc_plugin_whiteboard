@@ -10,7 +10,7 @@ import {
   RegularPolygon,
 } from "react-konva";
 
-function ShapeSeletor() {
+function ShapeSelector() {
   const dragShape = () => {};
   let screenWidth = window.innerWidth;
   let screenHeight = window.innerHeight;
@@ -124,4 +124,4 @@ function ShapeSeletor() {
   );
 }
 
-export default ShapeSeletor;
+export default ShapeSelector;
