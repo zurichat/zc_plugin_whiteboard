@@ -11,10 +11,9 @@
   height: 40px;
   margin: 20px auto;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-
   background: #ffffff;
   border-radius: 13px;
-   justify-content: space-evenly;
+  justify-content: space-evenly;
   align-items: center;
 }
 

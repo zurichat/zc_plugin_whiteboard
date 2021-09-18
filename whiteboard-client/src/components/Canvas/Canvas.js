@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Stage, Layer, Text } from "react-konva";
-//import Circ from "../../elements/Circ";
+import Circ from "../../elements/Circ";
 
 const Canvas = () => {
   const stageEl = React.createRef();
