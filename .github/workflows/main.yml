@@ -24,7 +24,7 @@ jobs:
         with:
          directory: whiteboard-client
 
-	      #this job installs intalls yarn dependencies on the github runner
+	 #this job installs intalls yarn dependencies on the github runner
          #and also to build the static files that would be transferred to server later
       - name: install Dependencies
         run: |
@@ -49,7 +49,7 @@ jobs:
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
             yarn
 
-	     # this job copies the build folder from GitHub runners to the server with sftp, make sure the paths are correct      
+	# this job copies the build folder from GitHub runners to the server with sftp, make sure the paths are correct      
       - name: copy build to server
         uses: Creepios/sftp-action@v1.0.1
         with:
@@ -59,7 +59,7 @@ jobs:
           localPath: './whiteboard-client/build/'
           remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-server/build'
 
-	      # this job ensures your processes are restarted after the process to serve your app
+	# this job ensures your processes are restarted after the process to serve your app
       - name: restart pm2
         uses: appleboy/ssh-action@master
         with:
