@@ -4,7 +4,7 @@ import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import SavedFileView from "./SavedFileView/SavedFileView";
 import PopUpButton from "./PopUpButton/PopUpButton";
-function ToolBar() {
+function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) {
   const Wrapper = styled.div`
     margin: auto;
     border-radius: 9px;
@@ -83,7 +83,7 @@ function ToolBar() {
             </svg>
           </Icon>
         }
-        popUpMenu={<ColorPicker />}
+        popUpMenu={<ColorPicker changeColor={changeColor} changeColorToGrey={changeColorToGrey} changeColorToBlue={changeColorToBlue} changeColorToGreen={changeColorToGreen} changeColorToYellow={changeColorToYellow} />}
       />
 
       <Icon>
