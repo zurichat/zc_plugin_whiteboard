@@ -2,9 +2,11 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
-import SavedFileView from "./SavedFileView/SavedFileView";
 import PopUpButton from "./PopUpButton/PopUpButton";
-function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) {
+import { UploadTool } from "../uploadTool/Uploadtool";
+import StickyNote from "./Sticky/StickyNote";
+
+function ToolBar() {
   const Wrapper = styled.div`
     margin: auto;
     border-radius: 9px;
@@ -156,7 +158,7 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
             </svg>
           </Icon>
         }
-        popUpMenu={<SavedFileView />}
+        popUpMenu={<StickyNote />}
       />
       <PopUpButton
         content={
