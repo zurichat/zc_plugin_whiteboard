@@ -30,4 +30,7 @@ jobs:
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
             yarn install
             yarn run build
+            cd /var/www/zc_plugin_whiteboard/spa-root/
+            yarn install
+            yarn run build
             pm2 reload whiteboard 2>/dev/null || pm2 start app.js --name "whiteboard"
