@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import "./App.css";
 import ToolBar from "./components/ToolBar/ToolBar";
 import SearchBar from "./components/TopBar/Searchbar/SearchBar";
 import Zoom from "./components/Zoom/Zoom";
 import Header from "./components/TopBar/Header/Header";
-
+import StyledUrlUploadContainer from "./components/uploadTool/UrlUploadInput";
+import { StyledImportFileContainer } from "./components/uploadTool/ImportFiles";
+import {DisplayImports} from "./components/uploadTool/DisplayImports";
 // import Collaborator from "../components/Collaborators/Collaborator";
 // import Pointer from "../components/Collaborators/Pointer";
 // import CollabData from "../components/Collaborators/collabData.js";
@@ -18,14 +20,30 @@ const Temp = styled.div`
 `;
 
 function Whiteboard() {
+  const [displayUrl, setDisplayUrl] = useState(false);
+  const [displayImport, setDisplayImport] = useState(false);
+  const toggleDisplayUrlUploadHandler = () => {
+    const display = displayUrl;
+    setDisplayUrl(!display);
+  };
+  const toggleDisplayImportHandler = () => {
+    const display = displayImport;
+    setDisplayImport(!display);
+  };
   return (
     <div className="App">
       <div className="top-bar">
         <SearchBar />
         <Header />
       </div>
+      
+      {displayImport ? <StyledImportFileContainer /> : null}
       <Canvas />
-      <ToolBar />
+      {displayUrl ? <StyledUrlUploadContainer /> : null}
+      <ToolBar
+        showUrlContainer={toggleDisplayUrlUploadHandler}
+        showImportContainer={toggleDisplayImportHandler}
+      />
       <Zoom />
       {/*
       {CollabData.map(person=>{

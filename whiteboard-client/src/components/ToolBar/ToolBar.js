@@ -6,7 +6,7 @@ import SavedFileView from "./SavedFileView/SavedFileView";
 import PopUpButton from "./PopUpButton/PopUpButton";
 import { UploadTool } from "../uploadTool/Uploadtool";
 
-function ToolBar() {
+function ToolBar({ showUrlContainer, showImportContainer }) {
   const Wrapper = styled.div`
     margin: auto;
     border-radius: 9px;
@@ -160,7 +160,12 @@ function ToolBar() {
             {/* <i className="fas fa-upload"></i> */}
           </Icon>
         }
-        popUpMenu={<UploadTool />}
+        popUpMenu={
+          <UploadTool
+            showUrlContainer={showUrlContainer}
+            showImportContainer={showImportContainer}
+          />
+        }
       />
 
       <Icon>
