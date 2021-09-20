@@ -5,6 +5,7 @@ import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import PopUpButton from "./PopUpButton/PopUpButton";
 import { UploadTool } from "../uploadTool/Uploadtool";
 import StickyNote from "./Sticky/StickyNote";
+import ToolContext from "../../contexts/ToolContext";
 
 function ToolBar() {
   const Wrapper = styled.div`

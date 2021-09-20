@@ -6,11 +6,6 @@ import ToolBar from "./components/ToolBar/ToolBar";
 import SearchBar from "./components/TopBar/Searchbar/SearchBar";
 import Zoom from "./components/Zoom/Zoom";
 import Header from "./components/TopBar/Header/Header";
-<<<<<<< HEAD
-// import ExportTool from "./components/ExportTool/export";
-=======
-import ExportTool from "./components/ExportTool/export";
->>>>>>> 1379c31 (feat: import export tool to whiteboard)
 // import Collaborator from "../components/Collaborators/Collaborator";
 // import Pointer from "../components/Collaborators/Pointer";
 // import CollabData from "../components/Collaborators/collabData.js";
