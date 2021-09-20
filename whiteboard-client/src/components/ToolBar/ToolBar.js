@@ -90,7 +90,7 @@ function ToolBar() {
             </svg>
           </Icon>
         }
-        popUpMenu={<ColorPicker changeColor={changeColor} changeColorToGrey={changeColorToGrey} changeColorToBlue={changeColorToBlue} changeColorToGreen={changeColorToGreen} changeColorToYellow={changeColorToYellow} />}
+        popUpMenu={<ColorPicker />}
       />
 
       {/* text tool */}

@@ -2,13 +2,8 @@ import React, { useContext } from "react";
 import ToolContext from "../../../contexts/ToolContext";
 import "./Color.css";
 
-const ColorPicker = ({
-  changeColor,
-  changeColorToGrey,
-  changeColorToBlue,
-  changeColorToGreen,
-  changeColorToYellow,
-}) => {
+const ColorPicker = () => {
+    const {handleSetColor} = useContext(ToolContext);
   return (
     <div>
       <div className="colorpicker-container">
@@ -21,7 +16,7 @@ const ColorPicker = ({
           className="color color3"
         ></button>
         <button
-          onClick={() => handleSetColor("light-green")}
+          onClick={() => handleSetColor("green")}
           className="color color4"
         ></button>
         <button

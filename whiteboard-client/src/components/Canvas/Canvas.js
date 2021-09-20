@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { Stage, Layer, Line, Text } from "react-konva";
+import ToolContext from "../../contexts/ToolContext";
 import Circ from "../../elements/Circ";
+
 
 const Canvas = () => {
   const layerEl = React.createRef();
@@ -10,7 +12,8 @@ const Canvas = () => {
   const [selectedId, selectShape] = useState(null);
   const [shapes, setShapes] = useState([]);
 
-  const { color, tool, downloadURI, stageEl } = useContext(ToolContext);
+  const { color, tool, stageEl } = useContext(ToolContext);
+
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
   };
@@ -19,20 +22,6 @@ const Canvas = () => {
     const allCircles = JSON.parse(localStorage.getItem("circles"));
     setCircles(allCircles || []);
   }, []);
-
-  const handleMouseDown = (e) => {
-    const clickedOnEmpty = e.target === e.target.getStage();
-    if (clickedOnEmpty) {
-      selectShape(null);
-    }
-    isDrawing.current = true;
-    const pos = e.target.getStage().getPointerPosition();
-    setLines([...lines, { tool, points: [pos.x, pos.y] }]);
-  };
-
-  const [tool, setTool] = React.useState('pen');
-  const [lines, setLines] = React.useState([]);
-  const isDrawing = React.useRef(false);
 
   const handleMouseDown = (e) => {
     const clickedOnEmpty = e.target === e.target.getStage();
