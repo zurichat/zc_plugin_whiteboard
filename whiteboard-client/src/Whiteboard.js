@@ -5,7 +5,7 @@ import ToolBar from "./components/ToolBar/ToolBar";
 import SearchBar from "./components/TopBar/Searchbar/SearchBar";
 import Zoom from "./components/Zoom/Zoom";
 import Header from "./components/TopBar/Header/Header";
-import ExportTool from "./components/ExportTool/export";
+// import ExportTool from "./components/ExportTool/export";
 // import Collaborator from "../components/Collaborators/Collaborator";
 // import Pointer from "../components/Collaborators/Pointer";
 // import CollabData from "../components/Collaborators/collabData.js";
@@ -27,7 +27,6 @@ function Whiteboard() {
       <Canvas />
       <ToolBar />
       <Zoom />
-      <ExportTool />
       {/*
       {CollabData.map(person=>{
         return (

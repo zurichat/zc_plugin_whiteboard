@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import SavedFileView from "./SavedFileView/SavedFileView";
 import PopUpButton from "./PopUpButton/PopUpButton";
 import { UploadTool } from "../uploadTool/Uploadtool";
+import ToolContext from "../../contexts/ToolContext";
 
 function ToolBar() {
   const Wrapper = styled.div`
@@ -51,9 +52,12 @@ function ToolBar() {
     cursor: pointer;
   `;
 
+  const { handleEraserTool, handlePenTool } = useContext(ToolContext);
+
   return (
     <Wrapper>
-      <Icon>
+      {/* free hand drawing tool */}
+      <Icon onClick={handlePenTool}>
         <svg
           width="14"
           height="21"
@@ -68,6 +72,7 @@ function ToolBar() {
         </svg>
       </Icon>
 
+      {/* color picker tool */}
       <PopUpButton
         content={
           <Icon>
@@ -88,6 +93,7 @@ function ToolBar() {
         popUpMenu={<ColorPicker />}
       />
 
+      {/* text tool */}
       <Icon>
         <svg
           width="14"
@@ -100,7 +106,8 @@ function ToolBar() {
         </svg>
       </Icon>
 
-      <Icon>
+      {/* eraser tool */}
+      <Icon onClick={handleEraserTool}>
         <svg
           width="21"
           height="20"
