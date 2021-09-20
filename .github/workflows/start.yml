@@ -17,6 +17,9 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+            cd /var/www/zc_plugin_whiteboard/whiteboard-client/
+            rm package-lock.json
+            rm -rf node_modules
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
             pm2 ls
             pm2 stop whiteboard

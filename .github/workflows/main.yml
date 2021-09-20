@@ -47,6 +47,7 @@ jobs:
             git reset --hard origin/develop
             git pull origin develop            
             cd /var/www/zc_plugin_whiteboard/whiteboard-server/
+
             yarn
 
         # this job copies the build folder from GitHub runners to the server with sftp, make sure the paths are correct      
@@ -67,4 +68,10 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+
+            yarn install
+            yarn run build
+            cd /var/www/zc_plugin_whiteboard/spa-root/
+            yarn install
+            yarn run build
             pm2 reload whiteboard 2>/dev/null || pm2 start app.js --name "whiteboard"
