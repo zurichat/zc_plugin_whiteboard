@@ -3,7 +3,7 @@ import './Comment.css'
 import CommentForm from './CommentForm'
 import CommentHeader from './CommentHeader'
 import MessageContainer from './MessageContainer'
-import ViewMessage from './ViewMessage'
+import ViewMessage from './ViewMessage' 
 
 const CommentContainer = () => {
     return (

@@ -3,8 +3,9 @@ import styled from "styled-components";
 import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import PopUpButton from "./PopUpButton/PopUpButton";
+import StickyNote from "./Sticky/StickyNote"
 import { UploadTool } from "../uploadTool/Uploadtool";
-import StickyNote from "./Sticky/StickyNote";
+
 
 function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) {
   const Wrapper = styled.div`
