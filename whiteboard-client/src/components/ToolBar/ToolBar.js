@@ -7,7 +7,7 @@ import { UploadTool } from "../uploadTool/Uploadtool";
 import StickyNote from "./Sticky/StickyNote";
 import ToolContext from "../../contexts/ToolContext";
 
-function ToolBar() {
+function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) {
   const Wrapper = styled.div`
     margin: auto;
     border-radius: 9px;
@@ -90,7 +90,7 @@ function ToolBar() {
             </svg>
           </Icon>
         }
-        popUpMenu={<ColorPicker />}
+        popUpMenu={<ColorPicker changeColor={changeColor} changeColorToGrey={changeColorToGrey} changeColorToBlue={changeColorToBlue} changeColorToGreen={changeColorToGreen} changeColorToYellow={changeColorToYellow} />}
       />
 
       {/* text tool */}
