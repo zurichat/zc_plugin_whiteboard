@@ -20,7 +20,7 @@ const Participants = () => {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 20px;
+    // margin-top: 20px;
     margin-right: 20px;
     position: relative;
   `;
