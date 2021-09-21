@@ -23,7 +23,7 @@ jobs:
       - name: Deployment
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ secrets.ZURI_MAIN_HOST }}
+          host: ${{ secrets.ZURI_MAIN_HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
@@ -54,7 +54,7 @@ jobs:
       - name: Restart PM2 Server
         uses: appleboy/ssh-action@master
         with:
-          key: ${{ secrets.ZURI_MAIN_HOST }}
+          host: ${{ secrets.ZURI_MAIN_HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
