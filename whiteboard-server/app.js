@@ -11,10 +11,10 @@ const app = express();
 
 app.use("/api", router);
 
-app.use(express.static(path.join(__dirname, '../whiteboard-client/build')));
+app.use(express.static(path.join(__dirname, '../whiteboard-client/dist')));
 
-app.get('/', (req,res) => {
-  res.sendFile(path.join(__dirname, '../whiteboard-client/build/index.html'));
+app.get('/zuri-zuri-plugin-whiteboard.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '../whiteboard-client/dist/zuri-zuri-plugin-whiteboard.js'));
 });
 
 // ///////Whiteboard download
@@ -22,6 +22,12 @@ app.use(express.static(path.join(__dirname, 'downloader')));
 
 app.get('/download', (req, res) => {
   res.sendFile(path.join(__dirname,'downloader', 'downloadtest.html'));
+});
+
+app.use(express.static(path.join(__dirname, '../spa-root/dist')));
+
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname, '../spa-root/dist/index.html'));
 });
 
 //Error handling
@@ -45,3 +51,4 @@ app.use((error, req, res, next) => {
 app.listen(PORT, () => {
     console.log(`Server is listening on port http://127.0.0.1:${PORT}`);
   });
+
