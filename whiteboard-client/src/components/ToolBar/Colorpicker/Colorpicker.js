@@ -1,27 +1,40 @@
-import React from 'react';
-import './Color.css';
+import React, { useContext } from "react";
+import ToolContext from "../../../contexts/ToolContext";
+import "./Color.css";
 
+const ColorPicker = () => {
+    const {handleSetColor} = useContext(ToolContext);
+  return (
+    <div>
+      <div className="colorpicker-container">
+        <button
+          onClick={() => handleSetColor("grey")}
+          className="color color2"
+        ></button>
+        <button
+          onClick={() => handleSetColor("blue")}
+          className="color color3"
+        ></button>
+        <button
+          onClick={() => handleSetColor("green")}
+          className="color color4"
+        ></button>
+        <button
+          onClick={() => handleSetColor("yellow")}
+          className="color color5"
+        ></button>
+        <button
+          onClick={() => handleSetColor("purple")}
+          className="color color6"
+        ></button>
+        <div className="color-line"></div>
+        <button
+          onClick={() => handleSetColor("#734b6d")}
+          className="color color8"
+        ></button>
+      </div>
+    </div>
+  );
+};
 
-const ColorPicker = ({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) => {
-    return (
-        <div>
-            <div className="colorpicker-container">
-                <div className="color outerdiv1" onClick={changeColor}>
-                    <div className="inner-color-1"></div>
-                </div>
-                <div className="color color2" onClick={changeColorToGrey}></div>
-                <div className="color color3" onClick={changeColorToBlue}></div>
-                <div className="color color4" onClick={changeColorToGreen}></div>
-                <div className="color color5" onClick={changeColorToYellow}></div>
-                <div className="color color6"></div>
-                <div className="color-line"></div>
-                <div className="color color7">
-                    <div className="inner-color-7"></div>
-                </div>
-                <div className="color color8" ></div>
-            </div>
-        </div>
-    )
-}
-
-export default ColorPicker
+export default ColorPicker;

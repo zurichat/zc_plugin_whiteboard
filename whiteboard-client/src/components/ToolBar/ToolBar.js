@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import PopUpButton from "./PopUpButton/PopUpButton";
 import { UploadTool } from "../uploadTool/Uploadtool";
 import StickyNote from "./Sticky/StickyNote";
+import ToolContext from "../../contexts/ToolContext";
 
 function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) {
   const Wrapper = styled.div`
@@ -51,9 +52,12 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
     cursor: pointer;
   `;
 
+  const { handleEraserTool, handlePenTool } = useContext(ToolContext);
+
   return (
     <Wrapper>
-      <Icon>
+      {/* free hand drawing tool */}
+      <Icon onClick={handlePenTool}>
         <svg
           width="14"
           height="21"
@@ -68,6 +72,7 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
         </svg>
       </Icon>
 
+      {/* color picker tool */}
       <PopUpButton
         content={
           <Icon>
@@ -88,6 +93,7 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
         popUpMenu={<ColorPicker changeColor={changeColor} changeColorToGrey={changeColorToGrey} changeColorToBlue={changeColorToBlue} changeColorToGreen={changeColorToGreen} changeColorToYellow={changeColorToYellow} />}
       />
 
+      {/* text tool */}
       <Icon>
         <svg
           width="14"
@@ -100,7 +106,8 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
         </svg>
       </Icon>
 
-      <Icon>
+      {/* eraser tool */}
+      <Icon onClick={handleEraserTool}>
         <svg
           width="21"
           height="20"

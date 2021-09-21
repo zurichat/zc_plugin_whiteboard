@@ -6,7 +6,6 @@ import ToolBar from "./components/ToolBar/ToolBar";
 import SearchBar from "./components/TopBar/Searchbar/SearchBar";
 import Zoom from "./components/Zoom/Zoom";
 import Header from "./components/TopBar/Header/Header";
-
 // import Collaborator from "../components/Collaborators/Collaborator";
 // import Pointer from "../components/Collaborators/Pointer";
 // import CollabData from "../components/Collaborators/collabData.js";
