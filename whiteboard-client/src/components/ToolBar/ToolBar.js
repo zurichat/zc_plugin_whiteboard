@@ -4,6 +4,7 @@ import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import SavedFileView from "./SavedFileView/SavedFileView";
 import PopUpButton from "./PopUpButton/PopUpButton";
+import StickyNote from "../ToolBar/Sticky/StickyNote";
 function ToolBar() {
   const Wrapper = styled.div`
     margin: auto;
@@ -147,7 +148,7 @@ function ToolBar() {
           />
         </svg>
       </Icon>}
-      popUpMenu={<SavedFileView />}
+      popUpMenu={<StickyNote />}
        />
 
       <Icon>
