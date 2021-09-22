@@ -6,7 +6,7 @@ import PopUpButton from "./PopUpButton/PopUpButton";
 import { UploadTool } from "../uploadTool/Uploadtool";
 import StickyNote from "./Sticky/StickyNote";
 
-function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) {
+function ToolBar() {
   const Wrapper = styled.div`
     margin: auto;
     border-radius: 9px;
@@ -85,7 +85,7 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
             </svg>
           </Icon>
         }
-        popUpMenu={<ColorPicker changeColor={changeColor} changeColorToGrey={changeColorToGrey} changeColorToBlue={changeColorToBlue} changeColorToGreen={changeColorToGreen} changeColorToYellow={changeColorToYellow} />}
+        popUpMenu={<ColorPicker />}
       />
 
       <Icon>
