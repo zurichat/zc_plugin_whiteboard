@@ -1,21 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-export const UploadTool = () => {
+export const UploadTool = ({ showUrlContainer, showImportContainer }) => {
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [imageUrl, setImageUrl] = useState(null);
+
+  const fileSelectedHandler = (event) => {};
+
+  const Input = ({ className }) => {
+    return (
+      <Container>
+        <input
+          type="file"
+          accept="image/"
+          id="file"
+          className={className}
+          onChange={fileSelectedHandler}
+        />
+        <UploadTypeButton as={StyledLabel} position="first" />
+      </Container>
+    );
+  };
+  const StyledInput = styled(Input)`
+    display: none;
+  `;
+
   return (
     <ToolContainer>
-      <UploadTypeButton position="first">
-        <i className="fas fa-folder-open"></i>
-      </UploadTypeButton>
+      <StyledInput />
       <UploadTypeButton position="middle">
-        <i className="far fa-desktop"></i>
+        <i className="far fa-desktop" onClick={showImportContainer}></i>
       </UploadTypeButton>
       <UploadTypeButton position="last">
-        <i className="fab fa-chrome"></i>
+        <i className="fab fa-chrome" onClick={showUrlContainer}></i>
       </UploadTypeButton>
     </ToolContainer>
   );
 };
+
+const Container = styled.div`
+  display: flex;
+  cursor: pointer;
+  width: 100%;
+`;
+const Label = ({ className }) => {
+  return (
+    <label className={className} for="file">
+      <i className="fas fa-folder-open"></i>
+    </label>
+  );
+};
+const StyledLabel = styled(Label)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: 100%;
+`;
 
 const ToolContainer = styled.div`
   width: 120px;
