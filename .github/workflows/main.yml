@@ -124,24 +124,25 @@ jobs:
             git reset --hard origin/dev
             cd server
             yarn install
+            yarn build
 
-      - name: Copy WhiteBoard-Client dist folder to server
-        uses: Creepios/sftp-action@v1.0.1
-        with:
-          host: ${{ secrets.HOSTNAME }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          localPath: './whiteboard-client/dist/'
-          remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-client/dist'
+      # - name: Copy WhiteBoard-Client dist folder to server
+      #   uses: Creepios/sftp-action@v1.0.1
+      #   with:
+      #     host: ${{ secrets.HOSTNAME }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     localPath: './whiteboard-client/dist/'
+      #     remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-client/dist'
 
-      - name: Copy SPA Root dist folder to server
-        uses: Creepios/sftp-action@v1.0.1
-        with:
-          host: ${{ secrets.HOSTNAME }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          localPath: './whiteboard-root/dist/'
-          remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-root/dist'
+      # - name: Copy SPA Root dist folder to server
+      #   uses: Creepios/sftp-action@v1.0.1
+      #   with:
+      #     host: ${{ secrets.HOSTNAME }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     localPath: './whiteboard-root/dist/'
+      #     remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-root/dist'
 
       - name: Restart PM2 Server
         uses: appleboy/ssh-action@master
