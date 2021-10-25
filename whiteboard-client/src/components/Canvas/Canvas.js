@@ -11,7 +11,7 @@ const Canvas = ({ defaultPenColor }) => {
   const [selectedId, selectShape] = useState(null);
   const [shapes, setShapes] = useState([]);
 
-  const { color } = useContext(ToolContext);
+  // const { color } = useContext(ToolContext);
 
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
@@ -79,7 +79,7 @@ const Canvas = ({ defaultPenColor }) => {
             <Line
               key={i}
               points={line.points}
-              stroke={color}
+              // stroke={color}
               strokeWidth={5}
               tension={0.5}
               lineCap="round"

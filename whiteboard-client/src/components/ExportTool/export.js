@@ -51,13 +51,12 @@ const ListItem = styled("li")`
 function Export() {
   const [drop, setDrop] = useState(false);
   const toggling = () => setDrop(!drop);
-  const { stageEl, handleClearTool } = useContext(ToolContext);
+  // const { stageEl, handleClearTool } = useContext(ToolContext);
 
   const handleExport = () => {
     handleClearTool();
-    const uri = stageEl.current.toDataURL();
-    console.log(uri);
-    downloadURI(uri, "stage.png");
+    // const uri = stageEl.current.toDataURL();
+    // downloadURI(uri, "stage.png");
   };
 
   return (

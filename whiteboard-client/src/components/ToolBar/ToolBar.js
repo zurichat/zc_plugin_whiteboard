@@ -5,6 +5,7 @@ import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import PopUpButton from "./PopUpButton/PopUpButton";
 import { UploadTool } from "../uploadTool/Uploadtool";
 //import StickyNote from "./Sticky/StickyNote";
+// import { ToolContextProvider } from "../../contexts/ToolContext"
 
 function ToolBar({
   changeColor,
@@ -57,12 +58,12 @@ function ToolBar({
     cursor: pointer;
   `;
 
-  const { handleEraserTool, handlePenTool } = useContext(ToolContext);
+  // const { handleEraserTool, handlePenTool } = useContext(ToolContextProvider);
 
   return (
     <Wrapper>
       {/* free hand drawing tool */}
-      <Icon onClick={handlePenTool}>
+      {/* <Icon onClick={handlePenTool}>
         <svg
           width="14"
           height="21"
@@ -75,7 +76,7 @@ function ToolBar({
             fill="black"
           />
         </svg>
-      </Icon>
+      </Icon> */}
 
       {/* color picker tool */}
       <PopUpButton
@@ -120,7 +121,7 @@ function ToolBar({
       </Icon>
 
       {/* eraser tool */}
-      <Icon onClick={handleEraserTool}>
+      {/* <Icon onClick={handleEraserTool}>
         <svg
           width="21"
           height="20"
@@ -133,7 +134,7 @@ function ToolBar({
             fill="black"
           />
         </svg>
-      </Icon>
+      </Icon> */}
 
       <PopUpButton
         content={
