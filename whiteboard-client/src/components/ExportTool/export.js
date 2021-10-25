@@ -71,8 +71,8 @@ function Export() {
           <DropdownListContainer>
             <DropdownList>
               <ListItem onClick={handleExport}>
-                  <img src={logo1} alt="img" />
-                  <p>Export as Image</p>
+                <img src={logo1} alt="img" />
+                <p>Export as Image</p>
               </ListItem>{" "}
               <ListItem>
                 <img src={logo2} alt="pdf" />

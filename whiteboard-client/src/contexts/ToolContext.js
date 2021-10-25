@@ -11,18 +11,17 @@ export const ToolContextProvider = ({ children }) => {
   };
 
   const handleClearTool = () => {
-      setTool("");
-  }
+    setTool("");
+  };
 
   function downloadURI(uri, name) {
-    var link = document.createElement('a');
+    var link = document.createElement("a");
     link.download = name;
     link.href = uri;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   }
-  
 
   const handleEraserTool = () => {
     setTool("eraser");
@@ -34,7 +33,16 @@ export const ToolContextProvider = ({ children }) => {
 
   return (
     <ToolContext.Provider
-      value={{ tool, handleSetColor, color, stageEl, handleEraserTool, handleClearTool, handlePenTool, downloadURI }}
+      value={{
+        tool,
+        handleSetColor,
+        color,
+        stageEl,
+        handleEraserTool,
+        handleClearTool,
+        handlePenTool,
+        downloadURI,
+      }}
     >
       {children}
     </ToolContext.Provider>
