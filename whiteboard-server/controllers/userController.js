@@ -6,7 +6,7 @@ exports.getUsers = async (req, res, next) => {
     .then((users) => {
       res.status(200).json({ message: "All Participants", users });
     })
-    .catch((err) => res.status(400).json({err}));
+    .catch((err) => res.status(400).json({ err }));
 };
 
 // Getting a user profile data
@@ -20,7 +20,7 @@ exports.getUser = async (req, res, next) => {
       res.status(200).json({ message: "Participant profile", user });
     }
   } catch (err) {
-    throw(err);
+    throw err;
   }
 };
 
@@ -37,7 +37,7 @@ exports.updateUser = async (req, res, next) => {
       res.status(200).json({ message: "Participant's profile updated", user });
     }
   } catch (err) {
-    throw(err);
+    throw err;
   }
 };
 
@@ -51,6 +51,6 @@ exports.deleteUser = async (req, res, next) => {
       message: "Participant has been removed",
     });
   } catch (err) {
-    throw(err);
+    throw err;
   }
 };

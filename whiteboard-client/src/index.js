@@ -6,18 +6,15 @@ import { render } from "react-dom";
 
 // import NewWhiteboard from "./pages/NewWhiteboard";
 
-
-
 const Index = () => {
   return (
     <React.StrictMode>
-    <Whiteboard />
-  </React.StrictMode>
+      <Whiteboard />
+    </React.StrictMode>
   );
 };
 
 export default Index;
-
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

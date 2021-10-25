@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Stage, Layer, Line, Text } from "react-konva";
 import Circ from "../../elements/Circ";
 
-const Canvas = ({defaultPenColor}) => {
+const Canvas = ({ defaultPenColor }) => {
   const stageEl = React.createRef();
   const layerEl = React.createRef();
 
@@ -19,19 +19,19 @@ const Canvas = ({defaultPenColor}) => {
     setCircles(allCircles || []);
   }, []);
 
-  const [tool, setTool] = React.useState('pen');
+  const [tool, setTool] = React.useState("pen");
   const [lines, setLines] = React.useState([]);
   const isDrawing = React.useRef(false);
 
   const handleMouseDown = (e) => {
     isDrawing.current = true;
     const pos = e.target.getStage().getPointerPosition();
-    setLines([...lines, {tool, points: [pos.x, pos.y]}]);
-  }
+    setLines([...lines, { tool, points: [pos.x, pos.y] }]);
+  };
 
   const handleMouseMove = (e) => {
-    if(!isDrawing.current){
-        return;
+    if (!isDrawing.current) {
+      return;
     }
 
     const stage = e.target.getStage();
@@ -44,11 +44,11 @@ const Canvas = ({defaultPenColor}) => {
     // replace last
     lines.splice(lines.length - 1, 1, lastLine);
     setLines(lines.concat());
-  }
+  };
 
   const handleMouseUp = () => {
     isDrawing.current = false;
-  }
+  };
 
   return (
     <Stage
@@ -89,7 +89,7 @@ const Canvas = ({defaultPenColor}) => {
             tension={0.5}
             lineCap="round"
             globalCompositeOperation={
-              line.tool === 'eraser' ? 'destination-out' : 'source-over'
+              line.tool === "eraser" ? "destination-out" : "source-over"
             }
           />
         ))}

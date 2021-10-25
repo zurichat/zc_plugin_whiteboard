@@ -1,18 +1,15 @@
-import React, {useState} from 'react'
-import { Message } from './Message'
+import React, { useState } from "react";
+import { Message } from "./Message";
 
 const MessageContainer = () => {
+  return (
+    <div>
+      <div className="message-container">
+        <Message />
+        <Message />
+      </div>
+    </div>
+  );
+};
 
-
-    return (
-        <div>
-            <div className="message-container">
-                <Message />
-                <Message />
-            </div>
-            
-        </div>
-    )
-}
-
-export default MessageContainer
+export default MessageContainer;

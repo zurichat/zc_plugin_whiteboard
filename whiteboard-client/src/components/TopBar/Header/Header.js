@@ -6,7 +6,7 @@ const Header = () => {
   const Wrapper = styled.div`
     display: flex;
     justify-content: space-around;
-    `;
+  `;
   const Title = styled.h2`
     text-align: center;
     flex: 1;

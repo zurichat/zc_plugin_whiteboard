@@ -9,11 +9,11 @@ class InformationController {
       lounge: "api/whiteboard/lounge",
       integrate: "api/whiteboard/integrate",
       meeting_Rooms: "api/whiteboard/rooms",
-      channels: "api/whiteboard/channels"
+      channels: "api/whiteboard/channels",
     };
 
     res.status(200).json(sidebar);
   }
-};
+}
 
 module.exports = InformationController;

@@ -48,7 +48,11 @@ const Participants = () => {
     justify-content: center;
     position: absolute;
     right: 0;
-    background: linear-gradient(0deg, rgba(51, 51, 51, 0.81), rgba(51, 51, 51, 0.81));
+    background: linear-gradient(
+      0deg,
+      rgba(51, 51, 51, 0.81),
+      rgba(51, 51, 51, 0.81)
+    );
   `;
 
   return (
@@ -61,9 +65,7 @@ const Participants = () => {
             alt={participant.name.first}
           ></Avatar>
         ))}
-        <MoreAvatarCounter>
-            +2
-        </MoreAvatarCounter>
+      <MoreAvatarCounter>+2</MoreAvatarCounter>
     </Wrapper>
   );
 };
