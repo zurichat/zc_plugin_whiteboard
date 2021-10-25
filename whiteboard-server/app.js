@@ -23,6 +23,12 @@ app.get("/download", (req, res) => {
   res.sendFile(path.join(__dirname, "downloader", "downloadtest.html"));
 });
 
+app.use(express.static(path.join(__dirname, "../spa-root/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../spa-root/dist/index.html"));
+});
+
 //Error handling
 app.use((req, res, next) => {
   const error = new Error("Not Found");
