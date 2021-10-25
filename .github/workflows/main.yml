@@ -109,7 +109,6 @@ jobs:
       - name: Install yarn dependencies and build project
         run: |
           cd whiteboard-server
-          yarn install
           yarn build
 
       - name: Deployment
@@ -124,25 +123,25 @@ jobs:
             git fetch --all
             git reset --hard origin/dev
             cd server
-            # yarn install
+            yarn install
 
-      # - name: Copy Main Chess App dist folder to server
-      #   uses: Creepios/sftp-action@v1.0.1
-      #   with:
-      #     privateKey: ${{ secrets.PRIVATE_KEY }}
-      #     host: ${{ secrets.HOSTNAME }}
-      #     username: ${{ secrets.USERNAME }}
-      #     localPath: './chess/dist/'
-      #     remotePath: '/var/www/zc_plugin_whiteboard/chess/dist'
+      - name: Copy WhiteBoard-Client dist folder to server
+        uses: Creepios/sftp-action@v1.0.1
+        with:
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          localPath: './whiteboard-client/dist/'
+          remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-client/dist'
 
-      # - name: Copy Client dist folder to server
-      #   uses: Creepios/sftp-action@v1.0.1
-      #   with:
-      #     privateKey: ${{ secrets.PRIVATE_KEY }}
-      #     host: ${{ secrets.HOSTNAME }}
-      #     username: ${{ secrets.USERNAME }}
-      #     localPath: './client/dist/'
-      #     remotePath: '/var/www/zc_plugin_whiteboard/client/dist'
+      - name: Copy SPA Root dist folder to server
+        uses: Creepios/sftp-action@v1.0.1
+        with:
+          host: ${{ secrets.HOSTNAME }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          localPath: './whiteboard-root/dist/'
+          remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-root/dist'
 
       - name: Restart PM2 Server
         uses: appleboy/ssh-action@master
@@ -151,7 +150,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/zc_plugin_whiteboard/server
-            yarn install
+            cd /var/www/zc_plugin_whiteboard/whiteboard-server
             PM2_HOME=/opt/pm2/.pm2 pm2 restart whiteboard
 

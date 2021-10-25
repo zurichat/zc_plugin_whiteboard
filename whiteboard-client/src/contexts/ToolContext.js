@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 
 const ToolContext = createContext(null);
+
 export const ToolContextProvider = ({ children }) => {
   const [tool, setTool] = useState("pen");
   const [color, setColor] = useState("red");

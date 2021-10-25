@@ -6,13 +6,12 @@ import Circ from "../../elements/Circ";
 const Canvas = ({ defaultPenColor }) => {
   const stageEl = React.createRef();
   const layerEl = React.createRef();
-  const [lines, setLines] = React.useState([]);
   const isDrawing = React.useRef(false);
   const [circles, setCircles] = useState();
   const [selectedId, selectShape] = useState(null);
   const [shapes, setShapes] = useState([]);
 
-  const { color, tool, stageEl } = useContext(ToolContext);
+  // const { color } = useContext(ToolContext);
 
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max));
@@ -25,7 +24,6 @@ const Canvas = ({ defaultPenColor }) => {
 
   const [tool, setTool] = React.useState("pen");
   const [lines, setLines] = React.useState([]);
-  const isDrawing = React.useRef(false);
 
   const handleMouseDown = (e) => {
     const clickedOnEmpty = e.target === e.target.getStage();
@@ -81,7 +79,7 @@ const Canvas = ({ defaultPenColor }) => {
             <Line
               key={i}
               points={line.points}
-              stroke={color}
+              // stroke={color}
               strokeWidth={5}
               tension={0.5}
               lineCap="round"

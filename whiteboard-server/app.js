@@ -10,11 +10,7 @@ const app = express();
 
 app.use("/api", router);
 
-app.use(express.static(path.join(__dirname, "../whiteboard-client/build")));
-
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../whiteboard-client/build/index.html"));
-});
+app.use(express.static(path.join(__dirname, "../whiteboard-client/dist")));
 
 // ///////Whiteboard download
 app.use(express.static(path.join(__dirname, "downloader")));
@@ -23,10 +19,10 @@ app.get("/download", (req, res) => {
   res.sendFile(path.join(__dirname, "downloader", "downloadtest.html"));
 });
 
-app.use(express.static(path.join(__dirname, "../spa-root/dist")));
+app.use(express.static(path.join(__dirname, '../whiteboard-root/dist')));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../spa-root/dist/index.html"));
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname, '../whiteboard-root/dist/index.html'));
 });
 
 //Error handling
