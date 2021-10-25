@@ -122,7 +122,7 @@ jobs:
             git stash
             git fetch --all
             git reset --hard origin/dev
-            cd server
+            cd whiteboard-server
             yarn install
             yarn build
 
