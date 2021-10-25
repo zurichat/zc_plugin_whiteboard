@@ -1,8 +1,7 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { ToolContextProvider } from "./contexts/ToolContext";
 import "./index.css";
 import Whiteboard from "./Whiteboard";
-import { render } from "react-dom";
 
 // import NewWhiteboard from "./pages/NewWhiteboard";
 
