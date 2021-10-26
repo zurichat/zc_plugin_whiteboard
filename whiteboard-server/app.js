@@ -8,7 +8,7 @@ require("dotenv").config();
 //initialize express
 const app = express();
 
-app.use("/api", router);
+app.use("/api/v1", router);
 
 app.use(express.static(path.join(__dirname, "../whiteboard-client/dist")));
 
