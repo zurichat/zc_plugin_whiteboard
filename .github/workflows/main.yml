@@ -1,39 +1,117 @@
+
 name: Zuri Whiteboard Deployment Pipeline
 
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events but for the dev branch
   push:
-    branches: [develop, main]
-  pull_request:
-    branches: [main, develop]
+    branches: [dev]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
 jobs:
-  build:
+  prettier:
     runs-on: ubuntu-latest
-    name: yarn build
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-        
-        # This job is to cache the node modules in order to reduce the time it would take to run
-      - name: Use cached node_modules
-        uses: c-hive/gha-yarn-cache@v2
-        with:
-         directory: whiteboard-client
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        # Make sure the actual branch is checked out when running on pull requests
+        ref: ${{ github.head_ref }}
 
-         #this job installs intalls yarn dependencies on the github runner
-         #and also to build the static files that would be transferred to server later
-      - name: install Dependencies
+    - name: Prettify code
+      uses: creyD/prettier_action@v3.1
+      with:
+        # This part is also where you can pass other options, for example:
+        prettier_options: --write **/*.{js,md}
+        commit_message: Prettier Action
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # fe_eslint:
+  #   needs: prettier
+
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
+  #     with:
+  #       # Make sure the actual branch is checked out when running on pull requests
+  #       ref: ${{ github.head_ref }}
+    
+  #   - name: Use cached node_modules
+  #     uses: c-hive/gha-yarn-cache@v2
+  #     with:
+  #       directory: client
+
+  #   - name: Install yarn dependencies and Run ESLint for client
+  #     run: |
+  #       cd client
+  #       yarn install
+  #       yarn run lint --fix
+
+  #   - name: Use cached node_modules
+  #     uses: c-hive/gha-yarn-cache@v2
+  #     with:
+  #       directory: chess
+    
+  #   - name: Install yarn dependencies and Run ESLint for main app
+  #     run: |
+  #       cd chess
+  #       yarn install
+  #       yarn run lint --fix
+
+  #   - name: Commit changes
+  #     if: always()
+  #     uses: stefanzweifel/git-auto-commit-action@v4.1.2
+  #     with:
+  #       commit_message: Frontend EsLint Fixes
+
+  # be_eslint:
+  #   needs: fe_eslint
+
+  #   runs-on: ubuntu-latest
+
+  #   steps:
+  #   - name: Checkout
+  #     uses: actions/checkout@v2
+  #     with:
+  #       # Make sure the actual branch is checked out when running on pull requests
+  #       ref: ${{ github.head_ref }}
+    
+  #   - name: Use cached node_modules
+  #     uses: c-hive/gha-yarn-cache@v2
+  #     with:
+  #       directory: server
+
+  #   - name: Install yarn dependencies and Run ESLint
+  #     run: |
+  #       cd server
+  #       yarn install
+  #       yarn run lint --fix
+
+  #   - name: Commit changes
+  #     if: always()
+  #     uses: stefanzweifel/git-auto-commit-action@v4.1.2
+  #     with:
+  #       commit_message: Backend EsLint Fixes
+
+  deploy:
+    # needs: be_eslint
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install yarn dependencies and build project
         run: |
-          npm update           
-          cd whiteboard-client
-          npm update
-          npm run build     
+          cd whiteboard-server
+          yarn build
 
-      - name: Git Pull on Server
+      - name: Deployment
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.ZURI_MAIN_HOST }}
@@ -41,37 +119,38 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/zc_plugin_whiteboard/
-            git clean -fd
             git stash
             git fetch --all
-            git reset --hard origin/develop
-            git pull origin develop            
-            cd /var/www/zc_plugin_whiteboard/whiteboard-server/
+            git reset --hard origin/dev
+            cd whiteboard-server
+            yarn install
+            yarn build
 
-            yarn
+      # - name: Copy WhiteBoard-Client dist folder to server
+      #   uses: Creepios/sftp-action@v1.0.1
+      #   with:
+      #     host: ${{ secrets.HOSTNAME }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     localPath: './whiteboard-client/dist/'
+      #     remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-client/dist'
 
-        # this job copies the build folder from GitHub runners to the server with sftp, make sure the paths are correct      
-      - name: copy build to server
-        uses: Creepios/sftp-action@v1.0.1
-        with:
-          username: ${{ secrets.USERNAME }}
-          host: ${{ secrets.ZURI_MAIN_HOST }}
-          password: ${{ secrets.PASSWORD }}
-          localPath: './whiteboard-client/build/'
-          remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-server/build'
+      # - name: Copy SPA Root dist folder to server
+      #   uses: Creepios/sftp-action@v1.0.1
+      #   with:
+      #     host: ${{ secrets.HOSTNAME }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     localPath: './whiteboard-root/dist/'
+      #     remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-root/dist'
 
-        # this job ensures your processes are restarted after the process to serve your app
-      - name: restart pm2
+      - name: Restart PM2 Server
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.ZURI_MAIN_HOST }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
+            cd /var/www/zc_plugin_whiteboard/whiteboard-server
+            PM2_HOME=/opt/pm2/.pm2 pm2 restart whiteboard
 
-            yarn install
-            yarn run build
-            cd /var/www/zc_plugin_whiteboard/spa-root/
-            yarn install
-            yarn run build
-            pm2 reload whiteboard 2>/dev/null || pm2 start app.js --name "whiteboard"

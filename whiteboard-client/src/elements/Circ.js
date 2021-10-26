@@ -11,7 +11,7 @@ const Circ = ({ shapeProps, isSelected, onSelect, onChange }) => {
       trRef.current.getLayer().batchDraw();
     }
   }, [isSelected]);
-  
+
   return (
     <React.Fragment>
       <Circle

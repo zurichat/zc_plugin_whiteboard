@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import singleSpaReact from "single-spa-react";
-import Index from "./index"
+import Index from "./index";
 
 const lifecycles = singleSpaReact({
   React,

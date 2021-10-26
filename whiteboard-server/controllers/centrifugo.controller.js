@@ -1,7 +1,6 @@
 const axios = require("axios");
 const { SOCKER_KEY, SOCKET_URL } = require("../config/index");
 
-
 class CentrifugoController {
   static async publish(channel, data) {
     try {

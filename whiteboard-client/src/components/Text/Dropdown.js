@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './Dropdown.css'
+import "./Dropdown.css";
 
 const Dropdown = ({ selected, setSelected }) => {
   const [isActive, setIsActive] = useState(false);
@@ -17,9 +17,16 @@ const Dropdown = ({ selected, setSelected }) => {
       {isActive && (
         <div className="dropdown-content">
           {options.map((option, i) => (
-            <div  className="dropdown-item" key={i} onClick={(e) => {setSelected(option);
+            <div
+              className="dropdown-item"
+              key={i}
+              onClick={(e) => {
+                setSelected(option);
                 setIsActive(false);
-              }}>{option}</div>
+              }}
+            >
+              {option}
+            </div>
           ))}
         </div>
       )}

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import render from "react-dom";
 import styled from "styled-components";
 import "./App.css";
@@ -6,7 +6,6 @@ import ToolBar from "./components/ToolBar/ToolBar";
 import SearchBar from "./components/TopBar/Searchbar/SearchBar";
 import Zoom from "./components/Zoom/Zoom";
 import Header from "./components/TopBar/Header/Header";
-
 // import Collaborator from "../components/Collaborators/Collaborator";
 // import Pointer from "../components/Collaborators/Pointer";
 // import CollabData from "../components/Collaborators/collabData.js";
@@ -33,12 +32,11 @@ const Temp = styled.div`
 // }
 
 class Whiteboard extends Component {
-
-  constructor(){
+  constructor() {
     super();
     this.state = {
-      defaultColor: "#000"
-    }
+      defaultColor: "#000",
+    };
 
     this.changeColor = this.changeColor.bind(this);
     this.changeColorToGrey = this.changeColorToGrey.bind(this);
@@ -48,26 +46,26 @@ class Whiteboard extends Component {
   }
 
   changeColor = () => {
-    this.setState({defaultColor: "#000000"})
-  }
+    this.setState({ defaultColor: "#000000" });
+  };
 
   changeColorToGrey = () => {
-    this.setState({defaultColor: "#808080"})
-  }
+    this.setState({ defaultColor: "#808080" });
+  };
 
   changeColorToBlue = () => {
-    this.setState({defaultColor: "#0000ff"})
-  }
+    this.setState({ defaultColor: "#0000ff" });
+  };
 
   changeColorToGreen = () => {
-    this.setState({defaultColor: "#00ff00"})
-  }
+    this.setState({ defaultColor: "#00ff00" });
+  };
 
   changeColorToYellow = () => {
-    this.setState({defaultColor: "#ffff00"})
-  }
+    this.setState({ defaultColor: "#ffff00" });
+  };
 
-  render(){
+  render() {
     return (
       <div className="App">
         <div className="top-bar">
@@ -75,7 +73,13 @@ class Whiteboard extends Component {
           <Header />
         </div>
         <Canvas defaultPenColor={this.state.defaultColor} />
-        <ToolBar changeColor={this.changeColor} changeColorToGrey={this.changeColorToGrey} changeColorToBlue={this.changeColorToBlue} changeColorToGreen={this.changeColorToGreen} changeColorToYellow={this.changeColorToYellow} />
+        <ToolBar
+          changeColor={this.changeColor}
+          changeColorToGrey={this.changeColorToGrey}
+          changeColorToBlue={this.changeColorToBlue}
+          changeColorToGreen={this.changeColorToGreen}
+          changeColorToYellow={this.changeColorToYellow}
+        />
         <Zoom />
       </div>
     );

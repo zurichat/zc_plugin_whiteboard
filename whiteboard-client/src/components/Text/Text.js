@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./Text.css";
 import Dropdown from "./Dropdown";
 
 export const Text = () => {
-  const[selected, setSelected] = useState("")
+  const [selected, setSelected] = useState("");
   return (
     <div className="container">
       <div className="text-editor-header">
@@ -16,8 +16,12 @@ export const Text = () => {
         <button type="button" className="btn">
           <i className="fa fa-bold"></i>
         </button>
-        <Dropdown className="dropdown"selected={selected} setSelected={setSelected} />
-        
+        <Dropdown
+          className="dropdown"
+          selected={selected}
+          setSelected={setSelected}
+        />
+
         <button type="button" className="btn">
           <i className="fa fa-italic"></i>
         </button>
@@ -45,7 +49,7 @@ export const Text = () => {
         <button type="button" className="btn">
           <i className="fas fa-list-ol"></i>
         </button>
-        
+
         {/* <button type="button" className="btn">
           <select name="fonts" id="fonts">
             <option value="normal">Normal</option>
@@ -81,15 +85,11 @@ export const Text = () => {
         </button>
 
         {/* to be changed */}
-
-        
-
-       
       </div>
       {/* textcontent */}
       <textarea id="whiteboard-txt" name="whiteboard-txt" rows="4" cols="50">
-Design
-</textarea>
+        Design
+      </textarea>
     </div>
   );
 };

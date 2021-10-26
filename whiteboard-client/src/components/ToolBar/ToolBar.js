@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import ColorPicker from "./Colorpicker/Colorpicker";
 import ShapeSelector from "./ShapesSelector/ShapeSelector";
 import PopUpButton from "./PopUpButton/PopUpButton";
 import { UploadTool } from "../uploadTool/Uploadtool";
-import StickyNote from "./Sticky/StickyNote";
+//import StickyNote from "./Sticky/StickyNote";
+// import { ToolContextProvider } from "../../contexts/ToolContext"
 
-function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColorToGreen, changeColorToYellow}) {
+function ToolBar({
+  changeColor,
+  changeColorToGrey,
+  changeColorToBlue,
+  changeColorToGreen,
+  changeColorToYellow,
+}) {
   const Wrapper = styled.div`
     margin: auto;
     border-radius: 9px;
@@ -51,9 +58,12 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
     cursor: pointer;
   `;
 
+  // const { handleEraserTool, handlePenTool } = useContext(ToolContextProvider);
+
   return (
     <Wrapper>
-      <Icon>
+      {/* free hand drawing tool */}
+      {/* <Icon onClick={handlePenTool}>
         <svg
           width="14"
           height="21"
@@ -66,8 +76,9 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
             fill="black"
           />
         </svg>
-      </Icon>
+      </Icon> */}
 
+      {/* color picker tool */}
       <PopUpButton
         content={
           <Icon>
@@ -85,9 +96,18 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
             </svg>
           </Icon>
         }
-        popUpMenu={<ColorPicker changeColor={changeColor} changeColorToGrey={changeColorToGrey} changeColorToBlue={changeColorToBlue} changeColorToGreen={changeColorToGreen} changeColorToYellow={changeColorToYellow} />}
+        popUpMenu={
+          <ColorPicker
+            changeColor={changeColor}
+            changeColorToGrey={changeColorToGrey}
+            changeColorToBlue={changeColorToBlue}
+            changeColorToGreen={changeColorToGreen}
+            changeColorToYellow={changeColorToYellow}
+          />
+        }
       />
 
+      {/* text tool */}
       <Icon>
         <svg
           width="14"
@@ -100,7 +120,8 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
         </svg>
       </Icon>
 
-      <Icon>
+      {/* eraser tool */}
+      {/* <Icon onClick={handleEraserTool}>
         <svg
           width="21"
           height="20"
@@ -113,7 +134,7 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
             fill="black"
           />
         </svg>
-      </Icon>
+      </Icon> */}
 
       <PopUpButton
         content={
@@ -135,25 +156,6 @@ function ToolBar({changeColor, changeColorToGrey, changeColorToBlue, changeColor
         popUpMenu={<ShapeSelector />}
       />
 
-      <PopUpButton
-        content={
-          <Icon>
-            <svg
-              width="18"
-              height="18"
-              viewBox="0 0 18 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M12 11L11.883 11.007C11.6598 11.0333 11.4519 11.1341 11.293 11.293C11.1341 11.4519 11.0333 11.6598 11.007 11.883L11 12V18H0.998C0.734017 18.0005 0.480621 17.8962 0.293488 17.71C0.106355 17.5239 0.000794596 17.271 0 17.007V0.993C0 0.445 0.445 0 0.993 0H17.007C17.555 0 18 0.447 18 0.999V11H12ZM18 13L13 17.997V13H18Z"
-                fill="black"
-              />
-            </svg>
-          </Icon>
-        }
-        popUpMenu={<StickyNote />}
-      />
       <PopUpButton
         content={
           <Icon className="fas fa-upload">
