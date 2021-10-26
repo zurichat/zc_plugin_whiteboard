@@ -6,8 +6,8 @@ const writeDatabase = process.env.DATABASEWRITEURL;
 class ConnectDatabase {
   constructor(collection_name) {
     this.data = {
-      "plugin_id": "6177563e01341f0a7a53dcb9",
-      organization_id : "613fa96c6173056af01b4b28",
+      plugin_id: "6177563e01341f0a7a53dcb9",
+      organization_id: "613fa96c6173056af01b4b28",
       collection_name: collection_name,
       bulk_write: false,
       object_id: "",
