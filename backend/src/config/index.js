@@ -14,18 +14,18 @@ module.exports = {
     // Get Our PluginID from ENV or use the test_id
     ORGANISATION_ID: process.env.ORGANISATION_ID || "612a3a914acf115e685df8e3",
     // Endpoint for the database write operations
-    ZC_CORE_DB_WRITE: 'https://api.zuri.chat/data/write',
+    ZC_CORE_DB_WRITE: "https://api.zuri.chat/data/write",
     // Endpoint for the database read operations
-    ZC_CORE_DB_READ: 'https://api.zuri.chat/data/read',
+    ZC_CORE_DB_READ: "https://api.zuri.chat/data/read",
     // endpoint for deleting data
-    DELETE_URL: 'https://api.zuri.chat/data/delete',
+    DELETE_URL: "https://api.zuri.chat/data/delete",
   },
-   // Verify user auth status with this URL
-   WELCOME_URL: 'https://api.zuri.chat/auth/verify-token',
+  // Verify user auth status with this URL
+  WELCOME_URL: "https://api.zuri.chat/auth/verify-token",
 
-   // cookie from zc_core that expires in 2037
-   COOKIES:
-     'f6822af94e29ba112be310d3af45d5c7=MTYzNDE0OTkzNnxHd3dBR0RZeE5qY3hOVFE1T1dZM1lUYzVNR013T0dReU1qSm1NUT09fLxiYT50kNCayZQN_E_MlGlI3lbTETEX07XZYa-tcttk',
+  // cookie from zc_core that expires in 2037
+  COOKIES:
+    "f6822af94e29ba112be310d3af45d5c7=MTYzNDE0OTkzNnxHd3dBR0RZeE5qY3hOVFE1T1dZM1lUYzVNR013T0dReU1qSm1NUT09fLxiYT50kNCayZQN_E_MlGlI3lbTETEX07XZYa-tcttk",
 
   // Fetch user zc_core endpoint
   USER_URL: "https://api.zuri.chat/users/",

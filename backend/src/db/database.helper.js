@@ -1,10 +1,10 @@
 /* eslint-disable camelcase */
 // Package Modules
-const axios = require('axios');
+const axios = require("axios");
 
 // Custom Modules
-const { DATABASE } = require('../config');
-const CustomError = require('../utils/custom-error');
+const { DATABASE } = require("../config");
+const CustomError = require("../utils/custom-error");
 
 class DatabaseConnection {
   // First, we set the collection to work with when starting the DB connection
@@ -24,7 +24,7 @@ class DatabaseConnection {
       // Set the name of the collection to use
       collection_name,
       bulk_write: false,
-      object_id: '',
+      object_id: "",
       filter: {},
       options: {},
       payload: {},
@@ -38,12 +38,18 @@ class DatabaseConnection {
 
     try {
       // Make the request
-      const response = await axios.post(this.DB_WRITE_URL, JSON.stringify(this.DB_DEFAULTS_CONFIG));
+      const response = await axios.post(
+        this.DB_WRITE_URL,
+        JSON.stringify(this.DB_DEFAULTS_CONFIG)
+      );
 
       // Return the response
       return response.data;
     } catch (error) {
-      throw new CustomError(`Unable to Connect to Zuri Core DB [CREATE]: ${error}`, '500');
+      throw new CustomError(
+        `Unable to Connect to Zuri Core DB [CREATE]: ${error}`,
+        "500"
+      );
     }
   }
 
@@ -52,13 +58,16 @@ class DatabaseConnection {
     try {
       // Make the request
       const response = await axios.get(
-        `${this.DB_READ_URL}/${this.DB_DEFAULTS_CONFIG.plugin_id}/${this.DB_DEFAULTS_CONFIG.collection_name}/${this.DB_DEFAULTS_CONFIG.organization_id}?_id=${object_id}`,
+        `${this.DB_READ_URL}/${this.DB_DEFAULTS_CONFIG.plugin_id}/${this.DB_DEFAULTS_CONFIG.collection_name}/${this.DB_DEFAULTS_CONFIG.organization_id}?_id=${object_id}`
       );
 
       // Return the response
       return response.data;
     } catch (error) {
-      throw new CustomError(`Unable to Connect to Zuri Core DB [READ ONE]: ${error}`, '500');
+      throw new CustomError(
+        `Unable to Connect to Zuri Core DB [READ ONE]: ${error}`,
+        "500"
+      );
     }
   }
 
@@ -70,7 +79,7 @@ class DatabaseConnection {
 
       // Make the request
       const response = await axios.get(
-        `${this.DB_READ_URL}/${this.DB_DEFAULTS_CONFIG.plugin_id}/${this.DB_DEFAULTS_CONFIG.collection_name}/${this.DB_DEFAULTS_CONFIG.organization_id}?${query_string}`,
+        `${this.DB_READ_URL}/${this.DB_DEFAULTS_CONFIG.plugin_id}/${this.DB_DEFAULTS_CONFIG.collection_name}/${this.DB_DEFAULTS_CONFIG.organization_id}?${query_string}`
       );
 
       // Return the response
@@ -78,14 +87,14 @@ class DatabaseConnection {
     } catch (error) {
       if (
         error.response.data.status === 404 &&
-        error.response.data.message === 'collection not found'
+        error.response.data.message === "collection not found"
       ) {
         return { data: [] };
       }
 
       throw new CustomError(
         `Unable to Connect to Zuri Core DB [READ ONE BY PARAMETER]: ${error}`,
-        '500',
+        "500"
       );
     }
   }
@@ -109,14 +118,14 @@ class DatabaseConnection {
     } catch (error) {
       if (
         error.response.data.status === 404 &&
-        error.response.data.message === 'collection not found'
+        error.response.data.message === "collection not found"
       ) {
         return { data: [] };
       }
 
       throw new CustomError(
         `Unable to Connect to Zuri Core DB [READ ONE BY PARAMETER]: ${error}`,
-        '500',
+        "500"
       );
     }
   }
@@ -126,7 +135,7 @@ class DatabaseConnection {
     try {
       // Make the request
       const response = await axios.get(
-        `${this.DB_READ_URL}/${this.DB_DEFAULTS_CONFIG.plugin_id}/${this.DB_DEFAULTS_CONFIG.collection_name}/${this.DB_DEFAULTS_CONFIG.organization_id}`,
+        `${this.DB_READ_URL}/${this.DB_DEFAULTS_CONFIG.plugin_id}/${this.DB_DEFAULTS_CONFIG.collection_name}/${this.DB_DEFAULTS_CONFIG.organization_id}`
       );
 
       if (response.data.data == null) {
@@ -138,12 +147,15 @@ class DatabaseConnection {
     } catch (error) {
       if (
         error.response.data.status === 404 &&
-        error.response.data.message === 'collection not found'
+        error.response.data.message === "collection not found"
       ) {
         return { data: [] };
       }
 
-      throw new CustomError(`Unable to Connect to Zuri Core DB [READ ALL]: ${error}`, '500');
+      throw new CustomError(
+        `Unable to Connect to Zuri Core DB [READ ALL]: ${error}`,
+        "500"
+      );
     }
   }
 
@@ -155,12 +167,18 @@ class DatabaseConnection {
     this.DB_DEFAULTS_CONFIG.object_id = object_id;
     try {
       // Make the request
-      const response = await axios.put(this.DB_WRITE_URL, JSON.stringify(this.DB_DEFAULTS_CONFIG));
+      const response = await axios.put(
+        this.DB_WRITE_URL,
+        JSON.stringify(this.DB_DEFAULTS_CONFIG)
+      );
 
       // Return the response
       return response.data;
     } catch (error) {
-      throw new CustomError(`Unable to Connect to Zuri Core DB [UPDATE]: ${error}`, '500');
+      throw new CustomError(
+        `Unable to Connect to Zuri Core DB [UPDATE]: ${error}`,
+        "500"
+      );
     }
   }
 
@@ -175,13 +193,16 @@ class DatabaseConnection {
       // Make the request
       const response = await axios.post(
         this.DB_DELETE_URL,
-        JSON.stringify(this.DB_DEFAULTS_CONFIG),
+        JSON.stringify(this.DB_DEFAULTS_CONFIG)
       );
 
       // Return the response
       return response.data;
     } catch (error) {
-      throw new CustomError(`Unable to Connect to Zuri Core DB [DELETE]: ${error}`, '500');
+      throw new CustomError(
+        `Unable to Connect to Zuri Core DB [DELETE]: ${error}`,
+        "500"
+      );
     }
   }
 }
