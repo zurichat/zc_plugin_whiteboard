@@ -10,7 +10,7 @@ const app = express();
 
 app.use("/api/v1", router);
 
-app.use(express.static(path.join(__dirname, "../whiteboard-client/dist")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 // ///////Whiteboard download
 app.use(express.static(path.join(__dirname, "downloader")));

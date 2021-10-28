@@ -108,7 +108,7 @@ jobs:
 
       - name: Install yarn dependencies and build project
         run: |
-          cd whiteboard-server
+          cd backend
           yarn build
 
       - name: Deployment
@@ -122,18 +122,18 @@ jobs:
             git stash
             git fetch --all
             git reset --hard origin/dev
-            cd whiteboard-server
+            cd backend
             yarn install
             yarn build
 
-      # - name: Copy WhiteBoard-Client dist folder to server
+      # - name: Copy frontend dist folder to server
       #   uses: Creepios/sftp-action@v1.0.1
       #   with:
       #     host: ${{ secrets.HOSTNAME }}
       #     username: ${{ secrets.USERNAME }}
       #     password: ${{ secrets.PASSWORD }}
-      #     localPath: './whiteboard-client/dist/'
-      #     remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-client/dist'
+      #     localPath: './frontend/dist/'
+      #     remotePath: '/var/www/zc_plugin_whiteboard/frontend/dist'
 
       # - name: Copy SPA Root dist folder to server
       #   uses: Creepios/sftp-action@v1.0.1
@@ -151,6 +151,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/zc_plugin_whiteboard/whiteboard-server
+            cd /var/www/zc_plugin_whiteboard/backend
             PM2_HOME=/opt/pm2/.pm2 pm2 restart whiteboard
 
