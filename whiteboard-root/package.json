@@ -3,7 +3,7 @@
   "scripts": {
     "start": "concurrently yarn:start:*",
     "start:root": "webpack serve --port 9000 --env isLocal",
-    "start:app": "cd ../whiteboard-client && yarn run start --port 8025 --env isLocal",
+    "start:app": "cd ../frontend && yarn run start --port 8025 --env isLocal",
     "lint": "eslint src --ext js",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests",
     "format": "prettier --write .",

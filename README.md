@@ -16,9 +16,9 @@ Note, the following packages has already been installed
 First, run the development server:
 
 ```bash
-cd whiteboard-client/
+cd frontend/
 yarn run start
 # or
-cd whiteboard-server/
+cd backend/
 yarn run dev
 ```
