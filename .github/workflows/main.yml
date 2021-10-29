@@ -4,7 +4,7 @@ name: Zuri Whiteboard Deployment Pipeline
 on:
   # Triggers the workflow on push or pull request events but for the dev branch
   push:
-    branches: [dev]
+    branches: [main]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -119,9 +119,10 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/zc_plugin_whiteboard/
+            git branch -M main
             git stash
             git fetch --all
-            git reset --hard origin/dev
+            git reset --hard origin/main
             cd backend
             yarn install
             yarn build
@@ -153,5 +154,5 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/zc_plugin_whiteboard/backend
-            PM2_HOME=/opt/pm2/.pm2 pm2 restart whiteboard
+            #PM2_HOME=/opt/pm2/.pm2 pm2 restart app
 
