@@ -126,6 +126,7 @@ jobs:
             yarn install
             yarn build
 
+
       # - name: Copy frontend dist folder to server
       #   uses: Creepios/sftp-action@v1.0.1
       #   with:
