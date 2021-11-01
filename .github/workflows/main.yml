@@ -126,6 +126,8 @@ jobs:
             cd backend
             yarn install
             yarn build
+            fuser -k 5000/tcp
+            node app.js 
 
 
       # - name: Copy frontend dist folder to server
