@@ -126,8 +126,7 @@ jobs:
             cd backend
             yarn install
             yarn build
-            fuser -k 5000/tcp
-            node app.js 
+            pm2 restart 0 
 
 
       # - name: Copy frontend dist folder to server
@@ -148,13 +147,13 @@ jobs:
       #     localPath: './whiteboard-root/dist/'
       #     remotePath: '/var/www/zc_plugin_whiteboard/whiteboard-root/dist'
 
-      - name: Restart PM2 Server
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.ZURI_MAIN_HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          script: |
-            cd /var/www/zc_plugin_whiteboard/backend
-            PM2_HOME=/opt/pm2/.pm2 pm2 restart whiteboard 
+      # - name: Restart PM2 Server
+      #   uses: appleboy/ssh-action@master
+      #   with:
+      #     host: ${{ secrets.ZURI_MAIN_HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     script: |
+      #       cd /var/www/zc_plugin_whiteboard/backend
+      #       PM2_HOME=/opt/pm2/.pm2 pm2 restart whiteboard 
 
