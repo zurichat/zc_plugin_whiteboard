@@ -154,5 +154,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           script: |
             cd /var/www/zc_plugin_whiteboard/backend
-            #PM2_HOME=/opt/pm2/.pm2 pm2 restart app
+            fuser -k 5000/tcp
+            node app.js
 
