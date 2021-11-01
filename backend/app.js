@@ -14,7 +14,7 @@ app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("/test", (req, res) => {
     res.writeHead(200, { 'content-type': 'text/html' });
-    res.end('<p>Working</p>');
+    res.end('<p>Working Now</p>');
 });
 
 // ///////Whiteboard download
