@@ -126,6 +126,7 @@ jobs:
             cd backend
             yarn install
             yarn build
+            cd ../backend
             pm2 restart app.js
 
 
